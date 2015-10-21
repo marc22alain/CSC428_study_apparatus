@@ -1,0 +1,53 @@
+FUNCTIONS:
+Server:
+	-manage the experiments
+	-serve up the texts
+	-record the test results
+
+Client - reader:
+	-present the texts in three different ways:
+		.full page
+		.RSVP optimized per literature
+		.Spritz per API
+
+Client - writer/tester:
+	-present multiple choice question(s) testing comprehension of the texts
+	-offer writing interface for responding to the texts
+
+-------------------------------------------------------------------------------------------
+
+Set of experiments:
+	-pseudo-random distribution of texts to presentation methods, ensuring even and complete coverage of every text in every experiment
+
+Experiment:
+	-set of texts
+	-order of presentation
+	-presentation is 2 texts per method
+	-results recorded from tests (2+ per text)
+		.answers
+		.response times
+
+Text:
+	-tweet with some metadata and hashtags
+	-multiple choice question(s) about the content
+		.Q: does the order of presentation of the answers get randomized? Yes
+	-probably 12
+	-1 MongoDB record with the various attributes
+	 {
+	 	tweet: {
+	 		text: String,
+	 		author: String,
+	 		date: String,
+	 		hashtags: [tag: String]
+	 	}
+	 	test: {
+	 		question: String,
+	 		correct_answer: String,
+	 		incorrect_answers: [answer: String]
+	 	}
+	 }
+
+Participants:
+	-person meeting some conditions (control variables)
+	-particular experiment that they took
+	-their responses to the tests
