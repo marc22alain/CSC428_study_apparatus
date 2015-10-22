@@ -51,3 +51,34 @@ Participants:
 	-person meeting some conditions (control variables)
 	-particular experiment that they took
 	-their responses to the tests
+
+-------------------------------------------------------------------------------------------
+
+USE:
+
+0. Study director interacts with client tester to initiate a new participant's session, by recording their particulars and instructing the server to start
+1. Participant clicks/taps client reader 'READ' button to request a new text
+	-button is the full watch screen, to prime the focus point/area
+	-until the server receives a participant's particulars, the AJAX request is 'ignored', client continues to display the button (no errors)
+	-during a session, server must have received a response to a previously sent text before sending a new one
+2. Server sends a JSON with the tweet and the text presentation method; server is also ready to serve up questions on request, or simply delays the response to the client tester for a setTimeout after the tweet is sent to client reader
+3. Participant reads the text as presented by the client reader page script, with a setTimeout until blacking out.
+4. Participant then moves to the client tester device, and answers the question(s) and writes a tweet response
+	-question(s) are hidden until the participant clicks to display them, upon which a timer also starts and only stops when the particpant clicks the submit button (Q: is the participant made aware that they are being timed?)
+
+X. Hiccoughs:
+	-double-entry of participants; correcting participant records
+	-ending sessions before all texts are read
+	-hitting 'Back' or 'Refresh' buttons
+		-which REALLY requires the server to be running as a state-machine
+	-what is participant misses a text during its presentation ?
+	 .only study director can make a redo; probably need a recovery procedure for this
+	-
+
+-------------------------------------------------------------------------------------------
+
+SERVER BEHAVIOUR:
+
+Define it as finite-state automaton (FSA).
+
+TODO: Draw up the states and input sequences, then code it.
