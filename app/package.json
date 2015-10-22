@@ -1,0 +1,18 @@
+{
+  "name": "CSC428_study_apparatus",
+  "description": "App to run the experiments and record their results.",
+  "version": "0.0.1",
+  "author": "Marc",
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.x"
+  },
+  "dependencies": {
+    "mongoose": "3.8"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/marc22alain/CSC428_study_apparatus.git"
+  },
+  "license": "UNLICENSED"
+}
