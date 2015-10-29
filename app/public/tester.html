@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Text Presentation Study - Participant Creation</title>
+
+	<!-- General META -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Latest jQuery -->
+	<script src="jquery/jquery-2.1.4.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+	<!-- Custom: load last to take priority -->
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<script src="client-tester.js"></script>
+
+</head>
+
+<body>
+	<div class="container header">
+
+		<div id="participant-form">
+		<!-- <form> -->
+			<div id="error-hint"></div>
+			<div class="form-group">
+				<label for="participant-first-name">First Name</label>
+			    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<label for="participant-last-name">Last Name</label>
+			    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+			</div>
+			<div class="form-group">
+				<label for="participant-age">Age</label>
+			    <input type="text" class="form-control" id="age" placeholder="Age">
+			</div>
+			<button class="btn btn-default" onclick="submitParticipant()">Submit</button>
+		</div>
+
+		<div id="participant-title">
+			<h2 id="participant">hello</h2>
+			<h5>Experiment # <span id="experiment-number"></span></h5>
+
+			<div id="start-button">
+				<button class="btn btn-primary btn-lg" onclick="startExperiment()">Start the Experiment !</button>				
+			</div>
+
+			<div id="question-button">
+				<button class="btn btn-success btn-lg" onclick="getQuestions()">Get the Questions !</button>				
+			</div>
+
+			<div id="question-display">
+				<div class="question-container">
+					<h5>Question 1:</h5>
+					<h4 id="question" class="question"></h4>
+				</div>
+				<div class="radio answer-container" onclick="checkMe(this)">
+					<label>
+						<input type="radio" name="answer" value="answer-a" id="answer-a-radio">&nbsp<span id="answer-a" class="answer"></span>&nbsp
+					</label>
+				</div>
+				<div class="radio answer-container" onclick="checkMe(this)">
+					<label>
+						<input type="radio" name="answer" value="answer-b" id="answer-b-radio">&nbsp<span id="answer-b" class="answer"></span>&nbsp
+					</label>
+				</div>
+				<div class="radio answer-container" onclick="checkMe(this)">
+					<label>
+						<input type="radio" name="answer" value="answer-c" id="answer-c-radio">&nbsp<span id="answer-c" class="answer"></span>&nbsp
+					</label>
+				</div>
+				<button class="btn btn-default" onclick="recordAnswer()">Submit</button>
+
+			</div>
+			
+		</div>
+
+
+	</div>
+</body>
+</html>
