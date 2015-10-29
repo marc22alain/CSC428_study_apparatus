@@ -8,11 +8,18 @@
     "npm": "2.x"
   },
   "dependencies": {
+    "lodash": "^3.10.1",
+    "machina": "^1.1.2",
     "mongoose": "3.8"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/marc22alain/CSC428_study_apparatus.git"
+  "devDependencies": {
+    "cheerio": "^0.19.0",
+    "request": "~2.61.x",
+    "should": "~4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marc22alain/CSC428_study_apparatus.git"
   },
   "license": "UNLICENSED"
 }
