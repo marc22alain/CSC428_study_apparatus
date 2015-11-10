@@ -12,8 +12,20 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+
+	<!-- Per Spritz API Lesson 1 :: must load before jQuery and Spritz scripts-->
+	<script type="text/javascript">
+	    var SpritzSettings = {
+	           clientId: "564f150670753a864",
+	           redirectUri: "login_success.html"
+	    };
+	</script>
+
+
 	<!-- Latest jQuery -->
 	<script src="jquery/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="//sdk.spritzinc.com/js/1.2/js/spritz.min.js"></script>
+	<!-- <script src="spritz/spritz.min.js"></script> -->
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
@@ -41,7 +53,10 @@
 
 			<div id="rsvp"></div>
 
-			<div id="spritz"></div>
+			<div id="spritzdiv">
+				<div id="logo-blocker"></div>
+				<div id="spritzer"></div>
+			</div>
 
 		</div>
 	</div>
