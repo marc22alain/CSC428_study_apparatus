@@ -4,7 +4,6 @@ var	mongoose = require('mongoose');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
-var currentParticipant, currentExperiment, currentTweet, currentTweetNum = 0;
 
 mongoose.connect(localDB, function(err) {
 	if (err) {
@@ -18,6 +17,14 @@ mongoose.connect(localDB, function(err) {
 var port = 3000;
 
 var state = 'ready', delayStart;
+
+var currentParticipant, currentExperiment, currentTweet, currentTweetNum = 0, maxTweets = 3;
+var methodChoices = ['traditional', 'RSVP', 'speed-reading'];
+var methodAndTweet = {
+	method: null,
+	tweet: null
+};
+
 
 var server = http.createServer(function(req, response) {
 	console.log(req.method + " request at " + req.url);
@@ -83,7 +90,14 @@ var server = http.createServer(function(req, response) {
 	else if (req.url === '/client-reader.js') {
 		fs.readFile('public/client-reader.js', handleResults);
 	}
+	else if (req.url === '/login_success.html') {
+		fs.readFile('public/login_success.html', handleResults);
+	}
+				else if (req.url === '/reader-test.html') {
+					fs.readFile('public/reader-test.html', handleResults);
+				}
 	else if (req.url === '/status') {
+		console.log('NOW in ' + state);
 		response.writeHead(200, { 'Content-Type': 'application/json' });
 		response.write('{"state": "' + state + '"}');
 		response.end();	
@@ -99,7 +113,6 @@ var server = http.createServer(function(req, response) {
 	else {
 		switch (state) {
 			case 'ready':
-				console.log('NOW in ' + state);
 				if (req.url === '/') {
 					fs.readFile('public/index.html', handleResults);
 				}
@@ -138,6 +151,7 @@ var server = http.createServer(function(req, response) {
 							            	currentExperiment = experiment;
 							            });
 							            state = 'wait-to-start';
+										console.log('SWITCHED to ' + state);
 							        }
 								};
 
@@ -160,7 +174,6 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-start':
-				console.log('NOW in ' + state);
 				if (req.url === '/') {
 					// Would actually be OK for either client to receive this again
 					fs.readFile('public/index.html', handleResults);
@@ -185,7 +198,8 @@ var server = http.createServer(function(req, response) {
 					response.write('OK START');
 					response.end();	
 					
-					state = 'wait-to-serve-text';					
+					state = 'wait-to-serve-text';
+					console.log('SWITCHED to ' + state);
 				}
 				else if (req.url === '/text' || req.url === '/question') {
 					response.writeHead(403);
@@ -201,7 +215,9 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-serve-text':
-				console.log('NOW in ' + state);
+
+				// TODO: keep track of how many texts have been served ... you need to end the experiment
+
 				if (req.url === '/') {
 					// Would actually be OK for either client to receive this again
 					fs.readFile('public/index.html', handleResults);
@@ -222,6 +238,7 @@ var server = http.createServer(function(req, response) {
 				}
 				else if (req.url === '/text') {
 					// Use a Latin Square to counter-balance the starting conditions; use currentExperiment.number % 6 !
+					// TODO: account for switching the order in the Latin Square:: this occurs with the second half of the list of experiments
 					currentTweetNum++;
 					var slot = ((Math.ceil(currentTweetNum / 2) - 1) + (currentExperiment.number % 6)) % 6;
 		            var suiteKeys = ['set1', 'set2', 'set3', 'set4', 'set5', 'set6'];
@@ -230,16 +247,22 @@ var server = http.createServer(function(req, response) {
 						// console.log(result);
 						currentTweet = result;
 
+						// TODO: set_num determines the method: A: traditional, B: RSVP, C: speed-reading
+						methodAndTweet.method = methodChoices[currentExperiment.number % 3];
+						methodAndTweet.tweet = currentTweet;
+
 						response.writeHead(200);
-						response.write(JSON.stringify(currentTweet));
+						response.write(JSON.stringify(methodAndTweet));
+						// response.write(JSON.stringify(currentTweet));
 						response.end();
 
 						// This is an AJAX call for text from the client-reader
-						// TODO: define what text presentation method the client should use ... package it in the JSON
 						state = 'served text';
+						console.log('SWITCHED to ' + state);
 						delayStart = Date.now();
 						setTimeout(function() {
 							state = 'wait-to-receive-answer';
+							console.log('SWITCHED to ' + state);
 						}, 10000);
 					});
 				}
@@ -260,16 +283,15 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'served text':
-				console.log('NOW in ' + state);
 				if (req.url === '/question') {
 					// This is an AJAX call for question(s) from the client-tester
 					// This should not be immediately available until XX seconds after the text has been served to the client-reader
 					// Or, give intermediate stuff until the net state is reached... think about minimizing the number of end-points
 					setTimeout(function() {
 						response.writeHead(200);
-						response.write(JSON.stringify(currentTweet));
+						response.write(JSON.stringify(methodAndTweet));
 						response.end();
-					}, 10000 - (Date.now() - delayStart));
+					}, 6000 - (Date.now() - delayStart));
 				}
 				// Need to leave the client-reader undisturbed
 				// Need to keep questions off the client-tester screen
@@ -282,7 +304,6 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-receive-answer':
-				console.log('NOW in ' + state);
 				if (req.url === '/') {
 					// Would actually be OK for either client to receive this again
 					fs.readFile('public/index.html', handleResults);
@@ -308,16 +329,48 @@ var server = http.createServer(function(req, response) {
 				}
 				else if (req.url === '/question') {
 					response.writeHead(200);
-					response.write(JSON.stringify(currentTweet));
+					response.write(JSON.stringify(methodAndTweet));
 					response.end();
 				}
 				else if (req.url === '/answer') {
-					response.writeHead(200);
-					response.write('Did NOT process answer');
-					response.end();		
 
-					// TODO: process the answer
-					state = 'wait-to-serve-text';
+					req.on('data', function(data) {
+						var obj = JSON.parse(data);
+						console.log(obj);
+						schema.createResult(obj, function(err) {
+							if (err) {
+					            response.writeHead(400);
+					            response.write(JSON.stringify(err));
+								response.end();
+							}
+							else {
+								response.writeHead(200);
+								if (currentTweetNum < maxTweets) {
+									response.write('Answers saved');
+								}
+								else {
+									response.write('Last question done');
+									// Putting these tasks here, as the asynchronous call will finish later
+									currentTweetNum = 0;
+									currentParticipant = null;
+									currentExperiment = null;
+								}
+								response.end();
+							}
+						});
+					});
+
+					// Eliminate risk of confusion
+					methodAndTweet.method = null;
+					methodAndTweet.tweet = null;
+
+					if (currentTweetNum < maxTweets) {
+						state = 'wait-to-serve-text';
+					}
+					else {
+						state = 'ready';
+					}
+					console.log('SWITCHED to ' + state);
 				}
 				break;
 

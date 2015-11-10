@@ -86,7 +86,7 @@ describe('Server in state: READY', function() {
 			should.not.exist(err);
 			(response.statusCode).should.equal(200);
 			var page = cheerio.load(html);
-			(page("title").text()).should.equal('Text Presentation Study - Participant Creation');
+			(page("title").text()).should.equal('Text Presentation Study - Tester');
 
 			// Confirming that STATE is UNCHANGED
 			request(URL + '/status', function(err, response, body) {
@@ -304,7 +304,7 @@ describe('Server in state: WAIT-TO-START', function() {
 			should.not.exist(err);
 			(response.statusCode).should.equal(200);
 			var page = cheerio.load(html);
-			(page("title").text()).should.equal('Text Presentation Study - Participant Creation');
+			(page("title").text()).should.equal('Text Presentation Study - Tester');
 
 			// Confirming that STATE is UNCHANGED
 			request(URL + '/status', function(err, response, body) {
@@ -474,7 +474,7 @@ describe('Server in state: WAIT-TO-SERVE-TEXT', function() {
 			should.not.exist(err);
 			(response.statusCode).should.equal(200);
 			var page = cheerio.load(html);
-			(page("title").text()).should.equal('Text Presentation Study - Participant Creation');
+			(page("title").text()).should.equal('Text Presentation Study - Tester');
 
 			// Confirming that STATE is UNCHANGED
 			request(URL + '/status', function(err, response, body) {
@@ -661,7 +661,7 @@ describe('Server in state: WAIT-TO-RECEIVE-ANSWER ... after delay', function() {
 			should.not.exist(err);
 			(response.statusCode).should.equal(200);
 			var page = cheerio.load(html);
-			(page("title").text()).should.equal('Text Presentation Study - Participant Creation');
+			(page("title").text()).should.equal('Text Presentation Study - Tester');
 
 			// Confirming that STATE is UNCHANGED
 			request(URL + '/status', function(err, response, body) {
@@ -748,6 +748,7 @@ describe('Server in state: WAIT-TO-RECEIVE-ANSWER ... after delay', function() {
 	});
 
 	it('should acknowledge response to /answer', function(done) {
+		// TODO: elaborate to ensure correct saving of answers --> Result documents
 		var options = {
 			url: URL + '/answer',
 			method: 'GET',

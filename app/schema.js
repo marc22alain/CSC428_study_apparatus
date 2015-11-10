@@ -11,5 +11,6 @@ var _ = require('lodash');
 module.exports = _.extend(
     require('./models/tweets'),
     require('./models/experiments'),
-    require('./models/participants')
+    require('./models/participants'),
+    require('./models/results')
 );

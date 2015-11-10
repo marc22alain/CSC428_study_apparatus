@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
     errorHandler = require('./error'),
     Schema = mongoose.Schema;
 
-// TODO: implement time-to-answer in the Participant model
+
+// TODO: consider whether to save Result object references
 
 var ParticipantSchema = new Schema({
     firstName: {
@@ -42,30 +43,11 @@ var Participant = mongoose.model('Participant', ParticipantSchema);
 exports.createParticipant = function(partiObj, callback) {
     var participant = new Participant(partiObj);
 
-    participant.save(function (err) {
+    participant.save(function (err, result) {
         if (err) {
-            callback({ message: errorHandler.getErrorMessage(err)}, participant);
+            callback({ message: errorHandler.getErrorMessage(err)}, result);
         } else {
-            callback(err, participant);
+            callback(err, result);
         }
     });
 };
-
-
-// exports.createParticipant = function(first, last, age, callback) {
-//     var participant = new Participant({
-//         firstName: first,
-//         lastName: last,
-//         age: age
-//     });
-//     participant.save(function (err) {
-//         if (err) {
-//             console.log('err ', err);
-//             callback(err);
-//         }
-//         else {
-//             console.log('Saved');
-//             callback('OK');
-//         }
-//     });
-// };
