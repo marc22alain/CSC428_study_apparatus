@@ -7,7 +7,7 @@ var localDB = 'mongodb://localhost/CSC428';
 // TODO: provide a hosted database link, then populate it and use it
 var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
-mongoose.connect(localDB, function(err) {
+mongoose.connect(hostedDB, function(err) {
 	if (err) {
 		console.log('OOPS! ', err);		
 	}
