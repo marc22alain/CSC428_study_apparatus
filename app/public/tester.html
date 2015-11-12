@@ -56,8 +56,14 @@
 			<h2 id="participant">hello</h2>
 			<h5>Experiment # <span id="experiment-number"></span></h5>
 
-			<div id="start-button">
-				<button class="btn btn-primary btn-lg" onclick="startExperiment()">Start the Experiment !</button>				
+			<div id="start-button-set">
+				<div id="practice-button">
+					<button class="btn btn-default btn-lg" onclick="startExperiment('practice')">Practice !</button>				
+				</div>
+
+				<div id="start-button">
+					<button class="btn btn-primary btn-lg" onclick="startExperiment('start')">Start the Experiment !</button>				
+				</div>
 			</div>
 
 			<div id="question-button">
@@ -88,8 +94,8 @@
 
 			</div>
 
-			<div id="thank-you">
-				<h2>Thank you for participating in our study !</h2>
+			<div>
+				<h2 id="thank-you"></h2>
 			</div>
 			
 		</div>

@@ -6,11 +6,6 @@ var mongoose = require('mongoose'),
 // TODO: update the model to hold the questions in an array
 
 var TweetSchema = new Schema({
-    name: {
-        type: String,
-        default: '',
-        trim: true
-    },
     tweet: {
         type: String,
         default: '',
@@ -31,7 +26,7 @@ var TweetSchema = new Schema({
         default: '',
         trim: true
     }],
-    question1: {
+    questions: [{
         question: {
             type: String,
             default: '',
@@ -47,74 +42,10 @@ var TweetSchema = new Schema({
             default: '',
             trim: true
         }
-    },
-    question2: {
-        question: {
-            type: String,
-            default: '',
-            trim: true
-        },
-        answers: [{
-            type: String,
-            default: '',
-            trim: true
-        }],
-        correct: {
-            type: String,
-            default: '',
-            trim: true
-        }
-    },
-    question3: {
-        question: {
-            type: String,
-            default: '',
-            trim: true
-        },
-        answers: [{
-            type: String,
-            default: '',
-            trim: true
-        }],
-        correct: {
-            type: String,
-            default: '',
-            trim: true
-        }
-    },
-    question4: {
-        question: {
-            type: String,
-            default: '',
-            trim: true
-        },
-        answers: [{
-            type: String,
-            default: '',
-            trim: true
-        }],
-        correct: {
-            type: String,
-            default: '',
-            trim: true
-        }
-    },
-    question5: {
-        question: {
-            type: String,
-            default: '',
-            trim: true
-        },
-        answers: [{
-            type: String,
-            default: '',
-            trim: true
-        }],
-        correct: {
-            type: String,
-            default: '',
-            trim: true
-        }
+    }],
+    practice: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -122,9 +53,10 @@ var Tweet = mongoose.model('Tweet', TweetSchema);
 
 exports.Tweet = Tweet;
 
-exports.createTweet = function(tweetFile, callback) {
+exports.createTweet = function(tweetFile, practice, callback) {
     var tweetObject = JSON.parse(tweetFile);
     var tweet = new Tweet(tweetObject);
+    tweet.practice = practice;
     tweet.save(function (err) {
         if (err) {
             console.log('err ', err);
@@ -154,6 +86,16 @@ exports.tweetById = function(tweetId, callback) {
 
 exports.tweetListInternal = function(callback) {
     Tweet.find().exec(function(err, results) {
+        if (err) {
+            console.log('OOPS! Error is ', err);
+        } else {
+            return callback(results);
+        }
+    });
+};
+
+exports.tweetListPractice = function(callback) {
+    Tweet.find({ practice: true }).exec(function(err, results) {
         if (err) {
             console.log('OOPS! Error is ', err);
         } else {

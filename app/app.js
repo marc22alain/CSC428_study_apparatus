@@ -4,6 +4,8 @@ var	mongoose = require('mongoose');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
+// TODO: provide a hosted database link, then populate it and use it
+var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
 mongoose.connect(localDB, function(err) {
 	if (err) {
@@ -18,13 +20,25 @@ var port = 3000;
 
 var state = 'ready', delayStart;
 
-var currentParticipant, currentExperiment, currentTweet, currentTweetNum = 0, maxTweets = 3;
+var currentParticipant, currentExperiment, currentTweet, currentTweetNum = 0, maxTweets = 36;
 var methodChoices = ['traditional', 'RSVP', 'speed-reading'];
+var methodChoicesReversed = ['speed-reading', 'RSVP', 'traditional'];
 var methodAndTweet = {
 	method: null,
 	tweet: null
 };
 
+var practiceExperiment, practiceTweet, practiceTweetNum = 0, maxPracticeTweets = 6, practice = true;
+
+schema.getPracticeExperiment(function(err, result) {
+	if (err) {
+		// ... already , communicated
+	}
+	else {
+		practiceExperiment = result[0];
+		console.log('practiceExperiment is ' + practiceExperiment);
+	}
+});
 
 var server = http.createServer(function(req, response) {
 	console.log(req.method + " request at " + req.url);
@@ -37,10 +51,16 @@ var server = http.createServer(function(req, response) {
 	// End-points providing study functions:
 	//		'/status'	relates the sever's current status, allowing for client-reader to align its status in the event of upset
 	//		'/participant'		will save a new participant to start an experiment
-	//		'/start'		a signals from the client-tester to the server that the clients-reader is ready to start the readings
+	//		'/start'		a signal from the client-tester to the server that the client-reader is ready to start the readings
 	//		'/text'		a request from the client-reader for the next reqding
 	//		'/question'	a request from the client-tester for the next question/quiz
 	//		'/answer'		will save a participant's answers to a quiz about a reading
+	// TODO: create 'practice' state; how to move into it; how to deal with normal interactions; try to avoid any changes on client side
+	//		 'practice' is more like a TOGGLE than a state; or a sub-state; we want to go through all of the motions on the client side, which requires
+	//		 the regular progression through the states;
+	//		 'practice' may be initiated before or after a participant is created ? ... indeterminate ?
+	//		 Consider that you may want to force the 'practice' round !, in which case 'practice' must effectively set up a parallel execution path
+	//		 through the states; 'practice' then becomes a QA attribute of each Particpant { practice: TRUE };
 
 	var handleResults = function(err, results) {
 		if (err) {
@@ -56,46 +76,14 @@ var server = http.createServer(function(req, response) {
 		}
 	};
 
-	var parseResults = function(reqData) {
-		console.log('' + reqData);
-		var params = reqData.toString().split('&');
-		var obj = new Object();
-		for (var i = 0; i < params.length; i++) {
-			var pair = params[i].split('=');
-			obj[pair[0]] = pair[1];
-		}
-		console.log(obj);
-		return obj;
+	var parsedUrl = req.url.split('.');
+	var ext = parsedUrl[parsedUrl.length -1];
+	if (ext === 'css' || ext === 'js' || ext === 'html') {
+		fs.readFile('public' + req.url, handleResults);
 	}
-
-
-	if (req.url === '/styles.css') {
-		fs.readFile('public/styles.css', handleResults);
+	else if (req.url === '/') {
+		fs.readFile('public/index.html', handleResults);
 	}
-	else if (req.url === '/bootstrap-3.3.5-dist/css/bootstrap.min.css') {
-		fs.readFile('public/bootstrap-3.3.5-dist/css/bootstrap.min.css', handleResults);
-	}
-	else if (req.url === '/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css') {
-		fs.readFile('public/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css', handleResults);
-	}
-	else if (req.url === '/bootstrap-3.3.5-dist/js/bootstrap.min.js') {
-		fs.readFile('public/bootstrap-3.3.5-dist/js/bootstrap.min.js', handleResults);
-	}
-	else if (req.url === '/jquery/jquery-2.1.4.js') {
-		fs.readFile('public/jquery/jquery-2.1.4.js', handleResults);
-	}
-	else if (req.url === '/client-tester.js') {
-		fs.readFile('public/client-tester.js', handleResults);
-	}
-	else if (req.url === '/client-reader.js') {
-		fs.readFile('public/client-reader.js', handleResults);
-	}
-	else if (req.url === '/login_success.html') {
-		fs.readFile('public/login_success.html', handleResults);
-	}
-				else if (req.url === '/reader-test.html') {
-					fs.readFile('public/reader-test.html', handleResults);
-				}
 	else if (req.url === '/status') {
 		console.log('NOW in ' + state);
 		response.writeHead(200, { 'Content-Type': 'application/json' });
@@ -113,16 +101,7 @@ var server = http.createServer(function(req, response) {
 	else {
 		switch (state) {
 			case 'ready':
-				if (req.url === '/') {
-					fs.readFile('public/index.html', handleResults);
-				}
-				else if (req.url === '/reader.html') {
-					fs.readFile('public/reader.html', handleResults);
-				}
-				else if (req.url === '/tester.html') {
-					fs.readFile('public/tester.html', handleResults);
-				}
-				else if (req.url === '/participant') {
+				if (req.url === '/participant') {
 
 					schema.unusedExperiments(function(err, results) {
 						if (err) {
@@ -130,7 +109,9 @@ var server = http.createServer(function(req, response) {
 						}
 						else {
 							req.on('data', function(data) {
-								var participant = parseResults(data);
+								var participant = JSON.parse(data);
+								// var participant = parseResults(data);
+								console.log('New participant is ' + JSON.stringify(participant));
 								participant.experiment = results[0];
 
 								var process = function(err, participant) {
@@ -147,6 +128,7 @@ var server = http.createServer(function(req, response) {
 
 							            currentParticipant = participant;
 
+							            // Declaration of 'in-process' allows sharing of the database among multiple experiment leaders
 							            schema.updateStatus(participant.experiment, 'in-process', function(experiment) {
 							            	currentExperiment = experiment;
 							            });
@@ -160,7 +142,7 @@ var server = http.createServer(function(req, response) {
 						}
 					});					
 				}
-				else if (req.url === '/text' || req.url === '/question') {
+				else if (req.url === '/text' || req.url === '/question' || req.url === '/practice' || req.url === '/start' || req.url === 'answer') {
 					response.writeHead(403);
 					response.write('Request is out of order');
 					response.end();			
@@ -174,23 +156,20 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-start':
-				if (req.url === '/') {
-					// Would actually be OK for either client to receive this again
-					fs.readFile('public/index.html', handleResults);
-				}
-				else if (req.url === '/reader.html') {
-					// CLient-reader has not yet received the text; present the READ button again
-					fs.readFile('public/reader.html', handleResults);
-				}
-				else if (req.url === '/tester.html') {
-					// Client-tester should re-populate with the currentParticipant
-					fs.readFile('public/tester.html', handleResults);
-				}
-				else if (req.url === '/participant') {
+				if (req.url === '/participant') {
 					// Serve back the current participant
 					response.writeHead(200);
 					response.write(JSON.stringify(currentParticipant));
 					response.end();
+				}
+				else if (req.url === '/practice') {
+					// Respond to AJAX from client-tester, initiating actual start
+					response.writeHead(200);
+					response.write('OK START');
+					response.end();	
+					
+					state = 'wait-to-serve-text';
+					console.log('SWITCHED to ' + state);
 				}
 				else if (req.url === '/start') {
 					// Respond to AJAX from client-tester, initiating actual start
@@ -199,6 +178,8 @@ var server = http.createServer(function(req, response) {
 					response.end();	
 					
 					state = 'wait-to-serve-text';
+					// This is the only opportunity to move out of 'practice' mode
+					practice = false;
 					console.log('SWITCHED to ' + state);
 				}
 				else if (req.url === '/text' || req.url === '/question') {
@@ -215,22 +196,7 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-serve-text':
-
-				// TODO: keep track of how many texts have been served ... you need to end the experiment
-
-				if (req.url === '/') {
-					// Would actually be OK for either client to receive this again
-					fs.readFile('public/index.html', handleResults);
-				}
-				else if (req.url === '/reader.html') {
-					// CLient-reader has not yet received the text; present the READ button again
-					fs.readFile('public/reader.html', handleResults);
-				}
-				else if (req.url === '/tester.html') {
-					// Client-tester should re-populate with the currentParticipant
-					fs.readFile('public/tester.html', handleResults);
-				}
-				else if (req.url === '/participant') {
+				if (req.url === '/participant') {
 					// Serve back the current participant
 					response.writeHead(200);
 					response.write(JSON.stringify(currentParticipant));
@@ -238,38 +204,80 @@ var server = http.createServer(function(req, response) {
 				}
 				else if (req.url === '/text') {
 					// Use a Latin Square to counter-balance the starting conditions; use currentExperiment.number % 6 !
-					// TODO: account for switching the order in the Latin Square:: this occurs with the second half of the list of experiments
-					currentTweetNum++;
-					var slot = ((Math.ceil(currentTweetNum / 2) - 1) + (currentExperiment.number % 6)) % 6;
+					// 24 experiments as of 15-11-11
+					// A: traditional, B: RSVP, C: speed-reading
+					// ABCABC
+					// BCABCA
+					// CABCAB
+					// CBACBA
+					// ACBACB
+					// BACBAC
 		            var suiteKeys = ['set1', 'set2', 'set3', 'set4', 'set5', 'set6'];
+					var slot = Math.floor(currentTweetNum / suiteKeys.length);
 
-					schema.tweetById(currentExperiment.suite[suiteKeys[slot]][currentTweetNum % 2], function(result) {
-						// console.log(result);
-						currentTweet = result;
+					// console.log('slot = ' + slot + ' currentTweetNum = ' + currentTweetNum + ' for ' + currentExperiment.suite[suiteKeys[slot]][currentTweetNum % 6]);
 
-						// TODO: set_num determines the method: A: traditional, B: RSVP, C: speed-reading
-						methodAndTweet.method = methodChoices[currentExperiment.number % 3];
-						methodAndTweet.tweet = currentTweet;
-
-						response.writeHead(200);
-						response.write(JSON.stringify(methodAndTweet));
-						// response.write(JSON.stringify(currentTweet));
-						response.end();
-
-						// This is an AJAX call for text from the client-reader
+							// TODO: extract for sharing
+					var transition = function() {
 						state = 'served text';
 						console.log('SWITCHED to ' + state);
 						delayStart = Date.now();
 						setTimeout(function() {
 							state = 'wait-to-receive-answer';
 							console.log('SWITCHED to ' + state);
-						}, 10000);
-					});
+						}, 6000);
+					};
+
+					// TODO: alternate path for 'practice'
+					if (practice) {
+								console.log('HERE practiceExperiment.suite is ' + practiceExperiment.suite);
+
+						schema.tweetById(practiceExperiment.suite[suiteKeys[practiceTweetNum % 6]][0], function(result) {
+							console.log('new tweet is ', result);
+							practiceTweet = result;
+
+							methodAndTweet.method = methodChoices[practiceTweetNum % 3];							
+							methodAndTweet.tweet = practiceTweet;
+
+							response.writeHead(200);
+							response.write(JSON.stringify(methodAndTweet));
+							response.end();
+
+							practiceTweetNum++;
+
+							// Transition to 'served text', then 'wait-to-receive-answer' after short delay
+							transition();
+						});
+					}
+					else {
+						schema.tweetById(currentExperiment.suite[suiteKeys[slot]][currentTweetNum % 6], function(result) {
+							console.log('new tweet is ', result);
+							currentTweet = result;
+
+							// Determine the method: A: traditional, B: RSVP, C: speed-reading
+							// 24 experiments as of 15-11-11, and avoiding off-by-1 error; numbering starts at 0
+							if (currentExperiment.number < 12) {
+								methodAndTweet.method = methodChoices[(Math.floor(currentTweetNum / 6)) % 3];							
+							}
+							else {
+								methodAndTweet.method = methodChoicesReversed[(Math.floor(currentTweetNum / 6)) % 3];
+							}
+							methodAndTweet.tweet = currentTweet;
+
+							response.writeHead(200);
+							response.write(JSON.stringify(methodAndTweet));
+							response.end();
+
+							currentTweetNum++;
+
+							// Transition to 'served text', then 'wait-to-receive-answer' after short delay
+							transition();
+						});						
+					}
 				}
-				else if (req.url === '/question' || req.url === '/start') {
-					// This is an AJAX call for question(s) from the client-tester
-					// This should not be immediately available until XX seconds after the text has been served to the client-reader
-					// Or, give intermediate stuff until the net state is reached... think about minimizing the number of end-points
+				else if (req.url === '/question' || req.url === '/start' || req.url === '/practice') {
+					// '/question' is an AJAX call for question(s) from the client-tester
+					// It should not be available until 6 seconds after the text has been served to the client-reader
 					response.writeHead(403);
 					response.write('Request is out of order');
 					response.end();		
@@ -304,19 +312,7 @@ var server = http.createServer(function(req, response) {
 
 
 			case 'wait-to-receive-answer':
-				if (req.url === '/') {
-					// Would actually be OK for either client to receive this again
-					fs.readFile('public/index.html', handleResults);
-				}
-				else if (req.url === '/reader.html') {
-					// CLient-reader has not yet received the text; present the READ button again
-					fs.readFile('public/reader.html', handleResults);
-				}
-				else if (req.url === '/tester.html') {
-					// Client-tester should re-populate with the currentParticipant
-					fs.readFile('public/tester.html', handleResults);
-				}
-				else if (req.url === '/participant') {
+				if (req.url === '/participant') {
 					// Serve back the current participant
 					response.writeHead(200);
 					response.write(JSON.stringify(currentParticipant));
@@ -333,38 +329,73 @@ var server = http.createServer(function(req, response) {
 					response.end();
 				}
 				else if (req.url === '/answer') {
+					// TODO: alternate path for 'practice'
+					// NOT saving the answers
+					// Client gets different message for end-of-practice
 
 					req.on('data', function(data) {
 						var obj = JSON.parse(data);
 						console.log(obj);
-						schema.createResult(obj, function(err) {
-							if (err) {
-					            response.writeHead(400);
-					            response.write(JSON.stringify(err));
-								response.end();
+
+						if (practice) {
+							console.log('practice results are not recorded');
+							response.writeHead(200);
+							if (practiceTweetNum < maxPracticeTweets) {	// Avoiding off-by-1 errors
+								response.write('Answers saved');
 							}
 							else {
-								response.writeHead(200);
-								if (currentTweetNum < maxTweets) {
-									response.write('Answers saved');
+								response.write('Last practice question done');
+								practiceTweetNum = 0;
+								// TODO: record the Participant's completion of the practice round
+								currentParticipant.practiced += 1;
+								schema.updateParticipant(currentParticipant, function(err, result) {
+									if (err) {
+										console.log('Problem updating PRACTICED: ' + err);
+									}
+									else {
+										currentParticipant = result;
+									}
+								});
+							}
+							response.end();							
+						}
+						else {
+							schema.createResult(obj, function(err) {
+								if (err) {
+						            response.writeHead(400);
+						            response.write(JSON.stringify(err));
+									response.end();
 								}
 								else {
-									response.write('Last question done');
-									// Putting these tasks here, as the asynchronous call will finish later
-									currentTweetNum = 0;
-									currentParticipant = null;
-									currentExperiment = null;
+									response.writeHead(200);
+									if (currentTweetNum < maxTweets) {
+										response.write('Answers saved');
+									}
+									else {
+										response.write('Last question done');
+										// Putting these tasks here, as the asynchronous call will finish later
+										currentTweetNum = 0;
+										currentParticipant = null;
+										// TODO: move experiment to 'completed'
+										currentExperiment = null;
+									}
+									response.end();
 								}
-								response.end();
-							}
-						});
+							});							
+						}
 					});
 
 					// Eliminate risk of confusion
 					methodAndTweet.method = null;
 					methodAndTweet.tweet = null;
 
-					if (currentTweetNum < maxTweets) {
+					console.log('*#*#*#*#*#*#*#  AT TEST: ' + practiceTweetNum  + ' vs ' + maxPracticeTweets);
+					if (practiceTweetNum  === maxPracticeTweets) {
+						// Participant has just completed practice by submitting the sixth answer,
+						// so present them with the opportunity to start the experiment or practice some more.
+						state = 'wait-to-start';
+					}
+					else if (currentTweetNum < maxTweets) {
 						state = 'wait-to-serve-text';
 					}
 					else {

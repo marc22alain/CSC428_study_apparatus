@@ -20,7 +20,10 @@ var resetState = function() {
 			case 'wait-to-start':
 				// Server state: participant has already been created.
 				// Submit participant data
+				$('#start-button-set').css('display', 'block');
+				$('#thank-you').css('display', 'none');
 				submitParticipant();
+
 				break;
 			case 'wait-to-serve-text':
 				// Server state: participant has already been created, 
@@ -28,7 +31,7 @@ var resetState = function() {
 				// Obtain participant data
 				submitParticipant();
 				// Get page into proper state
-				$('#start-button').css('display', 'none');
+				$('#start-button-set').css('display', 'none');
 				$('#question-button').css('display', 'block');
 				$('#question-display').css('display', 'none');
 				break;
@@ -40,7 +43,7 @@ var resetState = function() {
 				submitParticipant(getQuestions);
 				// getQuestions();
 				// Get page into proper state
-				$('#start-button').css('display', 'none');
+				$('#start-button-set').css('display', 'none');
 				break;
 			case 'wait-to-receive-answer':
 				// Server state: participant has already been created, 
@@ -51,7 +54,7 @@ var resetState = function() {
 				submitParticipant(getQuestions);
 				// getQuestions();
 				// Get page into proper state
-				$('#start-button').css('display', 'none');
+				$('#start-button-set').css('display', 'none');
 				break;
 
 
@@ -71,11 +74,12 @@ var submitParticipant = function(next) {
 	var options = {
 		url: '/participant',
 		method: 'POST',
-		data: {
+		data: JSON.stringify({
 			firstName: first.val(),
 			lastName: last.val(),
-			age: age.val
-		},
+			age: age.val()
+		}),
+		contentType: 'application/json',
 		success: function(data) {
 			// State transition: global variable assignment, display changes
 			participant = data;
@@ -83,6 +87,16 @@ var submitParticipant = function(next) {
 			$('#participant').html(participant.firstName + ' ' + participant.lastName);
 			$('#participant-form').css('display', 'none');
 			$('#experiment-number').html(participant.experiment);
+
+			if (participant.practiced) {
+				$('#practice-button').css('display', 'block');
+				$('#start-button').css('display', 'block');
+			}
+			else {
+				$('#practice-button').css('display', 'block');
+				$('#start-button').css('display', 'none');
+			}
+
 		},
 		error: function(data) {
 			// NO state changes
@@ -104,14 +118,15 @@ var submitParticipant = function(next) {
 };
 
 
-var startExperiment = function() {
+var startExperiment = function(mode) {
 	console.log('Started experiment ' + participant.experiment);
 	var options = {
-		url: '/start',
+		url: '/' + mode,
 		method: 'GET',
 
 		success: function() {
 			// State transition: global variable assignment, display changes
+			$('#practice-button').css('display', 'none');
 			$('#start-button').css('display', 'none');
 			$('#question-button').css('display', 'block');
 		},
@@ -145,7 +160,7 @@ var getQuestions = function() {
 				method: data.method
 			};
 
-			questionSet = [currentTweet.question1, currentTweet.question2, currentTweet.question3, currentTweet.question4, currentTweet.question5];
+			questionSet = currentTweet.questions;
 
 			displayQuestion();
 		},
@@ -172,8 +187,6 @@ var displayQuestion = function() {
 		checked.removeAttr('checked');
 	}
 
-	// TODO: elaborate to deal with multiple questions, randomizing the order of questions and order of m/c questions
-
 	var index = randomIndex(questionSet);
 	// Pop a question from questionSet; will eventually empty it
 	currentQuestion = questionSet.splice(index, 1)[0];
@@ -198,13 +211,10 @@ var displayQuestion = function() {
 
 	$('#question-num').html('Question ' + (5 - questionSet.length) + ':')
 
-	// TODO: create timer to record time-to-answer
 	answerTimer = Date.now();
-
 };
 
 var recordAnswer = function() {
-	// TODO: record the time required to submit an answer
 	var checked = $('input[name="answer"]').filter(':checked');
 	var answerText = $('#' + checked.val()).text();
 	console.log('span ? ', answerText);
@@ -241,9 +251,19 @@ var sendAnswer = function() {
 			if (data === 'Answers saved') {
 				resetState();
 			}
+			else if (data === 'Last practice question done') {
+				$('#question-display').css('display', 'none');
+				$('#thank-you').css('display', 'block');
+				$('#thank-you').html('Practice is done!');
+
+				setTimeout(function() {
+					resetState();
+				}, 5000);				
+			}
 			else if (data === 'Last question done') {
 				$('#question-display').css('display', 'none');
 				$('#thank-you').css('display', 'block');
+				$('#thank-you').html('Thank you for participating in our study !');
 
 				setTimeout(function() {
 					resetState();

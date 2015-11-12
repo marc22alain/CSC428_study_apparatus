@@ -66,15 +66,14 @@ var getText = function() {
 				console.log('attempting to send translate the Tweet');
 				$('#spritzdiv').css('display', 'block');
 				// Send to SpritzEngine to translate
-				// TODO: add all pertinent info to the SEND
-				var totalText = currentTweet.tweet.author + currentTweet.tweet.date + currentTweet.tweet.tweet;
+				var totalText = currentTweet.tweet.author + ' ' + currentTweet.tweet.date + ' ' + currentTweet.tweet.tweet;
 				SpritzClient.spritzify(totalText, "en_us;", onSpritzifySuccess, onSpritzifyError);
 			}
 			else if (currentTweet.method === 'RSVP') {
 				var textDiv = $('#rsvp');
 				textDiv.css('display', 'block');
 				textDiv.html(tweetWords.shift());
-				// TODO: some function to display the Tweet by RSVP
+
 				var rsvper = setInterval(function(){
 					// Check for words at the start of the interval; this allows the last word to be displayed for its full interval
 					if (tweetWords.length === 0) {
@@ -96,7 +95,7 @@ var getText = function() {
 				var textDiv = $('#full-text');
 				textDiv.css('display', 'block');
 				textDiv.html('&nbsp' + currentTweet.tweet.author + '<br>' + '&nbsp' + currentTweet.tweet.date + '&nbsp<br>' + currentTweet.tweet.tweet);
-				// TODO: calculate the correct time-out period for 300wpm
+
 				setTimeout(function() {
 					textDiv.css('display', 'none');
 					$('#text-request-button').css('display', 'block');			

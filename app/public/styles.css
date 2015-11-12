@@ -45,7 +45,7 @@
 #full-text {
 	padding: 5px;
 	display: none;
-	/*font-size: 0.8em;*/
+	font-size: 0.98em;
 }
 
 #rsvp {
@@ -97,7 +97,7 @@
 	color: red;
 }
 
-#question-button {
+#question-button, #start-button, #practice-button {
 	display: none;
 }
 
