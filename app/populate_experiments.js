@@ -3,6 +3,7 @@ var	mongoose = require('mongoose');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
+var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
 mongoose.connect(localDB, function(err) {
 	if (err) {
@@ -23,7 +24,7 @@ schema.Experiment.remove({}, function(err) {
 	}
 });
 
-var file = fs.readFileSync('./experiments/experiments_chart_min_3_max_7.json');
+var file = fs.readFileSync('./experiments/experiments_chart_NEW_STRATEGY.json');
 
 schema.makeExperiments(JSON.parse(file), function() {
 	mongoose.disconnect(function(err) {

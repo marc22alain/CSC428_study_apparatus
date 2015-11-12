@@ -3,6 +3,7 @@ var	mongoose = require('mongoose');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
+var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
 mongoose.connect(localDB, function(err) {
 	if (err) {
@@ -43,8 +44,13 @@ var countDown = function() {
 	}
 };
 
+var pattern = /tweet/;
+
 for (var i=0; i < files.length; i++) {
 	var fileName = 'tweets/' + files[i];
-	var tweetFile = fs.readFileSync(fileName);
-	schema.createTweet(tweetFile, countDown);
+	if (fileName.match(pattern)) {
+		var tweetFile = fs.readFileSync(fileName);
+		console.log('Num files is ' + files[i]);
+		schema.createTweet(tweetFile, false, countDown);
+	}
 }
