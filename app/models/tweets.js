@@ -9,7 +9,8 @@ var TweetSchema = new Schema({
     tweet: {
         type: String,
         default: '',
-        trim: true
+        trim: true,
+        required: 'No tweet text supplied'
     },
     author: {
         type: String,
@@ -76,8 +77,6 @@ exports.tweetById = function(tweetId, callback) {
         } else {
             // console.log('tweet for ' + result.number + ' was found.');
             if (callback) {
-                // var jsonPath = JSON.parse(result.path);
-                // console.log('jsonPath is type ', typeof(jsonPath));
                 callback(result);
             }
         }
@@ -85,7 +84,7 @@ exports.tweetById = function(tweetId, callback) {
 };
 
 exports.tweetListInternal = function(callback) {
-    Tweet.find().exec(function(err, results) {
+    Tweet.find({ practice:false }).exec(function(err, results) {
         if (err) {
             console.log('OOPS! Error is ', err);
         } else {

@@ -1,11 +1,12 @@
 var fs = require('fs');
 var	mongoose = require('mongoose');
+var _ = require('lodash');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
 var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
-mongoose.connect(localDB, function(err) {
+mongoose.connect(hostedDB, function(err) {
 	if (err) {
 		console.log('OOPS! ', err);		
 	}
@@ -14,20 +15,11 @@ mongoose.connect(localDB, function(err) {
 	}
 });
 
-// start with wiping the Tweet collection
-// schema.Tweet.remove({}, function(err) {
-// 	if (err) {
-// 		console.log(err);
-// 	}
-// 	else {
-// 	    console.log('collection removed!');		
-// 	}
-// });
+var tweetFile = fs.readFileSync('./tweets/tweets_42.json');
 
-var files = fs.readdirSync('tweets');
-// console.log(files);
+var tweetsObj = JSON.parse(tweetFile)
 
-var count = files.length;
+var count = tweetsObj.length;
 
 var countDown = function() {
 	count--;
@@ -44,13 +36,15 @@ var countDown = function() {
 	}
 };
 
-var pattern = /tweet/;
 
-for (var i=0; i < files.length; i++) {
-	var fileName = 'tweets/' + files[i];
-	if (fileName.match(pattern)) {
-		var tweetFile = fs.readFileSync(fileName);
-		console.log('Num files is ' + files[i]);
-		schema.createTweet(tweetFile, false, countDown);
+for (var i = 0, MAX = tweetsObj.length; i < MAX; i++) {
+	var stringObj = JSON.stringify(tweetsObj[i]);
+	if (i < 36) {
+		// create 36 records for the EXPERIMENT
+		schema.createTweet(stringObj, false, countDown);		
+	}
+	else {
+		// create 6 records for PRACTICE
+		schema.createTweet(stringObj, true, countDown);
 	}
 }

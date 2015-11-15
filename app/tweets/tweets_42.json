@@ -1,0 +1,1295 @@
+[{
+	"tweet": "Hi @RaviVora! We're excited to spotlight this Tweet in an upcoming Twitter project. Let us know if you'd prefer we omit your Tweet. Thx!",
+	"author": "Twitter Notify",
+	"date": "6 Jan 2015",
+	"tags": ["@RaviVora"],
+	"questions": [{
+		"question": "What does Twitter want?",
+		"answers": ["Permission to use Ravi's tweet", "Permission to broadcast at Superbowl", "To delete Ravi's Tweet"],
+		"correct": "Permission to use Ravi's tweet"
+	},
+	{
+		"question": "What type of project is Twitter working on?",
+		"answers": ["Real-time commentary for sporting events", "Improving their API", "It is unclear"],
+		"correct": "It is unclear"
+	},
+	{
+		"question": "In order to have his Tweet omitted from the spotlight Ravi must: ",
+		"answers": ["Opt-out", "Do nothing, Twitter will not sportlight it unless given permission", "There is no choice, Twitter has full control of which Tweets get spotlighted"],
+		"correct": "Opt-out"
+	},
+	{
+		"question": "Who is the author of this Tweet?",
+		"answers": ["Ravi Vora", "Twitter", "Twitter Notify"],
+		"correct": "Twitter Notify"
+	},
+	{
+		"question": "How does the author appear to feel?",
+		"answers": ["Excited", "Grateful", "Assertive"],
+		"correct": "Excited"
+	}]
+},
+{
+	"tweet": "Was wondering why @billgates cc'd me on story abt @MSFTResearch cool viral search tool; discovered I'm featured in it: http://oreilly.com",
+	"author": "Tim O'Reilly",
+	"date": "Mar 13 2013",
+	"tags": ["@billgates", "@MSFTResearch"],
+	"questions": [{
+		"question": "Who was the author of this tweet?",
+		"answers": ["Tim O'Reilly", "Bill Gates", "Microsoft"],
+		"correct": "Tim O'Reilly"
+	},
+	{
+		"question": "Which person or department developed the tool mentioned in the tweet?",
+		"answers": ["Tim O'Reilly", "Microsoft Research", "Microsoft Security"],
+		"correct": "Microsoft Research"
+	},
+	{
+		"question": "What does Tim think of the tool?",
+		"answers": ["He thinks it's disappointing", "He thinks it's neat", "He thinks it's an invasion of privacy"],
+		"correct": "He thinks it's neat"
+	},
+	{
+		"question": "What is the tool for?",
+		"answers": ["Searching for viruses on your computer", "Searching for websites", "Searching for viral content on Twitter"],
+		"correct": "Searching for viral content on Twitter"
+	},
+	{
+		"question": "Around when was this tool released?",
+		"answers": ["March 2013", "March 2015", "March 2008"],
+		"correct": "March 2013"
+	}]
+},
+{	"tweet": "The one page everyone in Hollywood is watching http://markury.com  This is the film industry's first crowdfunding moment.",
+	"author": "Mark Ury",
+	"date": "April 13 2013",
+	"tags": [],
+	"questions": [{
+		"question": "What website did the autho include in his tweet?",
+		"answers": ["The author's personal website", "The personal website of the author's favorite director", "The Kickstart website"],
+		"correct": "The author's personal website"
+	},
+	{
+		"question": "Who did the autho tag in his tweet?",
+		"answers": ["Mark Ury", "Kickstarter", "No one"],
+		"correct": "No one"
+	},
+	{
+		"question": "What industry is the author interested in?",
+		"answers": ["The tech industry", "The film industry", "The entertainment industry"],
+		"correct": "The film industry"
+	},
+	{
+		"question": "According to the author, what is everyone in Hollywood doing at the moment this tweet was posted?",
+		"answers": ["Watching markury.com", "Crowdfunding a new film", "Shaking in their boots"],
+		"correct": "Watching markury.com"
+	},
+	{
+		"question": "The autho is: ",
+		"answers": ["Humble", "Conceited", "Relaxed"],
+		"correct": "Conceited"
+	}]
+},
+{
+	"tweet": "I reflected on why the #sxsw induction means so much to me and it took >140 chars: http://zephblog.com/thoughts",
+	"author": "Danah Boyd",
+	"date": "Jan 20 2014",
+	"tags": ["#sxsw"],
+	"questions": [{
+		"question": "What does being inducted into SXSW mean to the author?",
+		"answers": ["She doesn't say", "It means a lot", "It doesn't mean much"],
+		"correct": "It means a lot"
+	},
+	{
+		"question": "How is the author feeling?",
+		"answers": ["Reflective", "Angry", "Happy"],
+		"correct": "Reflective"
+	},
+	{
+		"question": "Who is the author of the tweet?",
+		"answers": ["Danah Boyd", "Zeph Boyd", "SXSW"],
+		"correct": "Danah Boyd"
+	},
+	{
+		"question": "The author encourages the reader to: ",
+		"answers": ["Retweet her tweet", "Visit her website", "Spread her hashtag"],
+		"correct": "Visit her website"
+	},
+	{
+		"question": "The author expresses all her thoughts on SXSW in this tweet: ",
+		"answers": ["True", "False", "It's unclear"],
+		"correct": "False"
+	}]
+},
+{
+	"tweet": "@gnip makes it really easy for you to collect social data for your business. delivering data to happy customers!",
+	"author": "Gnip, Inc.",
+	"date": "Oct 21 2010",
+	"tags": ["@gnip"],
+	"questions": [{
+		"question": "What is the name of the company who posted this tweet?",
+		"answers": ["Gnip", "Gnip, Inc.", "@gnip"],
+		"correct": "Gnip, Inc."
+	},
+	{
+		"question": "What is this company's primary business?",
+		"answers": ["Delivering data", "Increasing your twitter followers", "Collecting social data"],
+		"correct": "Collecting social data"
+	},
+	{
+		"question": "According to Gnip their customers are: ",
+		"answers": ["Easy-going", "Stressed", "None of the above"],
+		"correct": "None of the above"
+	},
+	{
+		"question": "What kind of data does Gnip specialize in?",
+		"answers": ["Social media data", "E-commerce data", "Search Engine Optimization data"],
+		"correct": "Social media data"
+	},
+	{
+		"question": "Assuming Gnip is still in business, at least how long have they existed as a company?",
+		"answers": ["Around 2 years", "Around 5 years", "Around 1 year"],
+		"correct": "Around 5 years"
+	}]
+},
+{
+	"tweet": "'@JezzaK: If the Trump Hotel Honolulu is any reflection how you would be as President then I think the U.S will be in good hands' Thank you!",
+	"author": "Donald J. Trump",
+	"date": "Nov 10 2015",
+	"tags": ["@JezzaK"],
+	"questions": [{
+		"question": "The best way to describe this tweet would be: ",
+		"answers": ["A thankful response", "A hotel review", "A political rant"],
+		"correct": "A thankful response"
+	},
+	{
+		"question": "Where did Donald Trump go on vacation?",
+		"answers": ["Honolulu", "Washingtong, D.C.", "He did not go on any vacation."],
+		"correct": "He did not go on any vacation."
+	},
+	{
+		"question": "According to @JezzaK, Donald Trump would make a good President: ",
+		"answers": ["True", "False", "JezzaK did not make an opinion"],
+		"correct": "True"
+	},
+	{
+		"question": "According to this tweet, what is Donald Trump's occupation?",
+		"answers": ["President of the U.S.", "Hotel business owner", "Social media expert"],
+		"correct": "Hotel business owner"
+	},
+	{
+		"question": "How does Donald Trump feel about @JezzaK's characterization?",
+		"answers": ["Appreciative", "Agreeing", "Happy"],
+		"correct": "Appreciative"
+	}]
+},
+{
+	"tweet": "Communities are showing that we should approach substance use disorders as an opportunity to intervene rather than a race to incarcerate.",
+	"author": "Barack Obama",
+	"date": "Oct 21 2015",
+	"tags": [],
+	"questions": [{
+		"question": "This tweet most reflects which of the author's concerns: ",
+		"answers": ["Community Engagement", "Intervention in substance abuse disorders", "Incarcerate of drug abusers"],
+		"correct": "Intervention in substance abuse disorders"
+	},
+	{
+		"question": "According to this tweet, what sector of society is demonstrating a need for change in dealing with substance abuse?",
+		"answers": ["The Federal Government", "The Prison System", "Local communities"],
+		"correct": "Local communities"
+	},
+	{
+		"question": "The author believes intervention is more effective than incarceration for all crime: ",
+		"answers": ["True", "False", "Not stated"],
+		"correct": "Not stated"
+	},
+	{
+		"question": "How would you categorize the impact of this author's opinion?",
+		"answers": ["Very influential", "Somewhat influential", "Not influential"],
+		"correct": "Very influential"
+	},
+	{
+		"question": "What would best characterize the author's opinion: ",
+		"answers": ["Government needs to listen to what communities want", "Intervention is a good approach to substance abuse disorders", "Incarceration is a good approach to substance abuse disorders"],
+		"correct": "Intervention is a good approach to substance abuse disorders"
+	}]
+},
+{
+	"tweet": "The mandatory long-form #census will be back in time for next year. It’s time to restore data-based decision making to government.",
+	"author": "Justin Trudeau",
+	"date": "Nov 5 2015",
+	"tags": ["#census"],
+	"questions": [{
+		"question": "To which country will the long for census return?",
+		"answers": ["Canada", "France", "The United States"],
+		"correct": "Canada"
+	},
+	{
+		"question": "Given this tweet, which term seems the most important to the author?",
+		"answers": ["Government", "Census", "Data-based decision making"],
+		"correct": "Census"
+	},
+	{
+		"question": "Completing the long-form census will be: ",
+		"answers": ["Optional", "Unavailable", "Mandatory"],
+		"correct": "Mandatory"
+	},
+	{
+		"question": "According to the tweet, what is the main benefit of the long-form census?",
+		"answers": ["It will allow for more analytical decision making in government", "It will allow government to better ensure with domestic security", "It will allow government to better administer aid to citizens"],
+		"correct": "It will allow for more analytical decision making in government"
+	},
+	{
+		"question": "What would best characterize the author's opinion: ",
+		"answers": ["Government decisions should be supported by data", "The long-form census is not necessary", "The long-form census might return next year"],
+		"correct": "Government decisions should be supported by data"
+	}]
+},
+{
+	"tweet": "Happy Birthday, Montana! Today in 1889, it becomes 41st state. Middle school lesson on Battle of Little Bighorn: http://ow.ly/U9TCC ",
+	"author": "Smithsonian's National Museum of American History",
+	"date": "Nov 8 2015",
+	"tags": [],
+	"questions": [{
+		"question": "When did Montana become a state?",
+		"answers": ["Nov 8 1889", "Nov 12 1889", "Nov 8 1888"],
+		"correct": "Nov 8 1889"
+	},
+	{
+		"question": "Including Montana, how many states were part of the United States in 1889?",
+		"answers": ["51", "50", "41"],
+		"correct": "41"
+	},
+	{
+		"question": "The tweet links to a resource, how does the tweet characterize this resource?",
+		"answers": ["A short history of Montana", "An article detailing the Battle of Little Bighorn", "A school lesson for the history of the Battle of Little Bighorn"],
+		"correct": "A school lesson for the history of the Battle of Little Bighorn"
+	},
+	{
+		"question": "What best describes the author of this tweet?",
+		"answers": ["An academic historian", "An amateur historian", "An academic institution"],
+		"correct": "An academic institution"
+	},
+	{
+		"question": "Whose birthday does the tweet refer to?",
+		"answers": ["A middle-schooler student named Montana", "The State of Montana", "The author"],
+		"correct": "The State of Montana"
+	}]
+},
+{
+	"tweet": "On this day in 1896: Queen Victoria surpasses her grandfather King George III as the longest reigning monarch in British history",
+	"author": "History_Facts",
+	"date": "Sep 22 2013",
+	"tags": [],
+	"questions": [{
+		"question": "When did Queen Victoria become the longest reigning British monarch in history?",
+		"answers": ["Sep 22 1896", "Oct 22 1896", "Sep 22 1899"],
+		"correct": "Sep 22 1896"
+	},
+	{
+		"question": "Who's record did Queen Victoria beat in reference to this tweet?",
+		"answers": ["Her father", "King George III", "All of the above"],
+		"correct": "All of the above"
+	},
+	{
+		"question": "Is Queen Victoria still alive?",
+		"answers": ["Yes", "No", "I don't know"],
+		"correct": "No"
+	},
+	{
+		"question": "What record did Queen Victoria attain?",
+		"answers": ["Longest reigning Queen in history", "Longest reigning monarch in history", "Longest reigning British monarch in history"],
+		"correct": "Longest reigning British monarch in history"
+	},
+	{
+		"question": "What do we know about the author of this tweet?",
+		"answers": ["They are an amateur historian", "They work for a museum", "We don't know much"],
+		"correct": "We don't know much"
+	}]
+},
+{
+	"tweet": "Damaging winds & possible tornadoes this afternoon from Wisconsin to Texas. Illinois, Iowa & Missouri most at risk.",
+	"author": "CNN Weather Center",
+	"date": "Nov 11 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What region is experiencing damaging winds?",
+		"answers": ["The United States","The area between Wisconsin and Texas","Illinois, Iowa and Missouri"],
+		"correct": "The area between Wisconsin and Texas"
+	},
+	{
+		"question": "Of these areas, which is most at risk?",
+		"answers": ["Texas", "Iowa", "Arkansas"],
+		"correct": "Iowa"
+	},
+	{
+		"question": "This tweet warns of imminent tornadoes for the mid-Western United States.",
+		"answers": ["True","False, tornadoes have not been confirmed","False, tornadoes are only confirmed for Illinois, Iowa and Missouri"],
+		"correct": "False, tornadoes have not been confirmed"
+	},
+	{
+		"question": "During what season was this tweet published?",
+		"answers": ["Autumn", "Winter", "Not stated"],
+		"correct": "Autumn"
+	},
+	{
+		"question": "Who is the author of this tweet?",
+		"answers": ["CNN Weather Center", "CNN", "CNN News Alerts"],
+		"correct": "CNN Weather Center"
+	}]
+},
+{
+	"tweet": "Dow rises 25 points at open. Nasdaq up 0.2%. Macy's tumbles 10% after warning of poor sales during the holidays.",
+	"author": "CNN Money",
+	"date": "Nov 12 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What category best describes this tweet?",
+		"answers": ["Commercial News", "Financial News", "Breaking News"],
+		"correct": "Financial News"
+	},
+	{
+		"question": "Given the tweet, choose the most correct answer below: ",
+		"answers": ["The Dow, Nasdaq, and Macy's are all up", "Only the Dow is up", "The Nasdaq is up and Macy's is down"],
+		"correct": "The Nasdaq is up and Macy's is down"
+	},
+	{
+		"question": "Given the tweet, choose the most correct answer below: ",
+		"answers": ["The Dow is up 25 points","Macy's is down 25%","Nasdaq is up 10%"],
+		"correct": "The Dow is up 25 points"
+	},
+	{
+		"question": "What reason does the tweet give for Macy's stock performance?",
+		"answers": ["Excellent holiday sales", "Poor holiday sales", "Mediocre holiday sales"],
+		"correct": "Poor holiday sales"
+	},
+	{
+		"question": "Which of these holidays is most likely being referred to by the tweet?",
+		"answers": ["Easter", "Halloween", "Christmas/Hanukkah"],
+		"correct": "Christmas/Hanukkah"
+	}]
+},
+{
+	"tweet": "Foreign Affairs confirms Cdn couple found dead in #PlayaDelCarmen hotel room, on #Mexico's #Yucatan. Local reports say no sign of violence.",
+	"author": "CBC News Alert",
+	"date": "Nov 10 2015",
+	"tags": ["#PlayaDelCarmen", "#Mexico", "#Yucatan"],
+	"questions": [{
+		"question": "Which organization confirmed the news included in this tweet?",
+		"answers": ["Foreign Affairs","The Associated Press","CBC News"],
+		"correct": "Foreign Affairs"
+	},
+	{
+		"question": "This news is: ",
+		"answers": ["Recent", "Old", "Unknown"],
+		"correct": "Recent"
+	},
+	{
+		"question": "From which country did the couple originate from?",
+		"answers": ["Mexico","Yucatan","Canada"],
+		"correct": "Canada"
+	},
+	{
+		"question": "Which best describes the story reported by the tweet?",
+		"answers": ["The violent killing of a couple", "Murdered honeymooners", "Unexplained death in a foreign country"],
+		"correct": "Unexplained death in a foreign country"
+	},
+	{
+		"question": "Which of these sources does the tweet cite in addressing any possible signs of violence?",
+		"answers": ["CBC", "Foreign Affairs", "Local reports"],
+		"correct": "Local reports"
+	}]
+},
+{
+	"tweet": "F*** any game company that puts in-app purchases on kids games! We give the iPad to our child, every 5 minutes there's a new purchase!",
+	"author": "Kanye West",
+	"date": "Oct 19 2015",
+	"tags": [],
+	"questions": [{
+		"question": "How is the author feeling?",
+		"answers": ["Amazed","Angry","Excited"],
+		"correct": "Angry"
+	},
+	{
+		"question": "What is the main subject of this tweet?",
+		"answers": ["Music", "Childcare", "iPad games"],
+		"correct": "iPad games"
+	},
+	{
+		"question": "Which answer best describes the author's opinion?",
+		"answers": ["Children are irresponsible","Game companies are irresponsible","Parents are irresponsible"],
+		"correct": "Game companies are irresponsible"
+	},
+	{
+		"question": "Which answer best describes the author's opinion?",
+		"answers": ["Children's games should not have in-app purchases", "No games should not have in-app purchases", "In-app purchases are a necessary part of games"],
+		"correct": "Children's games should not have in-app purchases"
+	},
+	{
+		"question": "Which answer best characterizes this tweet?",
+		"answers": ["A rant", "A joke", "A question"],
+		"correct": "A rant"
+	}]
+},
+{
+	"tweet": "#Cancer treatment of former #US president #JimmyCarter going well, says his institute. No new malignancy, current issue responding well.",
+	"author": "CBC News Alert",
+	"date": "Nov 10 2015",
+	"tags": ["#JimmyCarter", "#Cancer", "#US"],
+	"questions": [{
+		"question": "What are the three key terms highlighted in this tweet?",
+		"answers": ["Jimmy Carter, Cancer, US","Jimmy Carter Institute, Cancer, US","Jimmy Carter, Cancer, CBC News"],
+		"correct": "Jimmy Carter, Cancer, US"
+	},
+	{
+		"question": "Which answer best describes Jimmy Carter?",
+		"answers": ["Philanthropist and activist", "Former US president", "Leading cancer scientist"],
+		"correct": "Former US president"
+	},
+	{
+		"question": "How is the cancer treatment mentioned in the tweet performing?",
+		"answers": ["Well", "Great", "Disappointing"],
+		"correct": "Well"
+	},
+	{
+		"question": "The patient's cancer shows no existing signs of malignancy.",
+		"answers": ["True", "False", "Unclear"],
+		"correct": "False"
+	},
+	{
+		"question": "Who does the tweet cite as their source for this news?",
+		"answers": ["Jimmy Carter's Institute", "CBC News Alert", "Jimmy Carter's doctor"],
+		"correct": "Jimmy Carter's Institute"
+	}]
+},
+{
+	"tweet": "Stuart Lancaster steps down as England's Rugby Union coach in wake of team's early World Cup exit",
+	"author": "BBC Breaking News",
+	"date": "Nov 5 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What is the name of the person this tweet refers to?",
+		"answers": ["Stuart Lancaster","Stephen Lancaster","Scott Lancaster"],
+		"correct": "Stuart Lancaster"
+	},
+	{
+		"question": "Which news source published this tweet?",
+		"answers": ["CBC", "CNN", "BBC"],
+		"correct": "BBC"
+	},
+	{
+		"question": "Why did the coach step down from his position?",
+		"answers": ["He was offered a better contract after his World Cup win", "His team did not make it far enough in the World Cup tournament", "Personal issues"],
+		"correct": "His team did not make it far enough in the World Cup tournament"
+	},
+	{
+		"question": "Which sport does the tweet concern?",
+		"answers": ["Soccer", "Rugby", "Football"],
+		"correct": "Rugby"
+	},
+	{
+		"question": "Which region's team did the coach represent?",
+		"answers": ["Scotland", "Ireland", "England"],
+		"correct": "England"
+	}]
+},
+{
+	"tweet": "BREAKING: Election commission announces opposition leader Suu Kyi has won her seat in Myanmar elections.",
+	"author": "The Associated Press",
+	"date": "Nov 11 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Which country does this tweet mention?",
+		"answers": ["Myanmar", "Malaysia", "Mongolia"],
+		"correct": "Myanmar"
+	},
+	{
+		"question": "What term best describes this piece of news?",
+		"answers": ["Breaking news", "Recent news", "Old news"],
+		"correct": "Breaking news"
+	},
+	{
+		"question": "Who is the Prime Minister of Myanmar?",
+		"answers": ["Suu Kyi","Aung San","Not stated in tweet"],
+		"correct": "Not stated in tweet"
+	},
+	{
+		"question": "Which answer best describes Suu Kyi: ",
+		"answers": ["Government party leader", "Opposition party leader", "Opposition party member"],
+		"correct": "Opposition party leader"
+	},
+	{
+		"question": "Given the date on which this tweet was published, how recent is this news?",
+		"answers": ["Less than a month", "Less than a year", "Over a year"],
+		"correct": "Less than a month"
+	}]
+},
+{
+	"tweet": "Egypt antiquities officials scoff at Ben Carson's claim, made during the Republican primary debate, that pyramids were built to store grain.",
+	"author": "The Associated Press",
+	"date": "Nov 10 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Who is the author of this tweet?",
+		"answers": ["Ben Carson","Egyptian officials","The Associated Press"],
+		"correct": "The Associated Press"
+	},
+	{
+		"question": "The Egyptian officials were experts in: ",
+		"answers": ["Antiquities", "Foreign Affairs", "Politics"],
+		"correct": "Antiquities"
+	},
+	{
+		"question": "Which answer best describes Ben Carson's politics: ",
+		"answers": ["Conservative", "Liberal", "Unclear"],
+		"correct": "Conservative"
+	},
+	{
+		"question": "According to the tweet, the pyramids were built to store grain.",
+		"answers": ["True", "False", "Unknown"],
+		"correct": "False"
+	},
+	{
+		"question": "Which answer best describes the Egyptian official's reaction?",
+		"answers": ["Angry", "Uninterested", "Dismissive"],
+		"correct": "Dismissive"
+	}]
+},
+{
+	"tweet": "My 21 yo cat just killed a bird on my balcony then hid it under my stereo. Save me. Wait, it's not dead.",
+	"author": "Maja Kovats",
+	"date": "Jul 12 2014",
+	"tags": [],
+	"questions": [{
+		"question": "How old is the author of this tweet?",
+		"answers": ["21","20","Not stated"],
+		"correct": "Not stated"
+	},
+	{
+		"question": "According to the tweet, the cat killed the bird.",
+		"answers": ["True", "False", ""],
+		"correct": "False"
+	},
+	{
+		"question": "Which answer best describes the sequence of events in this tweet?",
+		"answers": ["The cat killed the bird on the balcony and left it there.", "The cat attacked the bird on the balcony and killed it under the stereo.", "The cat attacked the bird on the balcony and left it under the stereo."],
+		"correct": "The cat attacked the bird on the balcony and left it under the stereo."
+	},
+	{
+		"question": "Which answer best describes how the author was feeling?",
+		"answers": ["Intrigued", "Uninterested", "Anxious"],
+		"correct": "Anxious"
+	},
+	{
+		"question": "Which answer best describes the cat?",
+		"answers": ["A young kitten", "An old cat", "No clear description"],
+		"correct": "An old cat"
+	}]
+},
+{
+	"tweet": "Currently in line for the Elvis Costello book signing at Bay & Bloor Indigo or (as it is known tonight) Dad Central",
+	"author": "macisaac, n",
+	"date": "Oct 1 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Where was this event taking place?",
+		"answers": ["Bay & Bloor Indigo","Bay & Bloor Chapters","Yonge & Bloor Indigo"],
+		"correct": "Bay & Bloor Indigo"
+	},
+	{
+		"question": "What type of event is referenced in the tweet?",
+		"answers": ["A concert", "A book signing", "A meetup for Dads"],
+		"correct": "A book signing"
+	},
+	{
+		"question": "Which person does the event center around?",
+		"answers": ["Elvis Costello", "The tweet author's Dad", "The author of the tweet"],
+		"correct": "Elvis Costello"
+	},
+	{
+		"question": "What is the author implying in this tweet?",
+		"answers": ["Elvis Costello is very cutting edge", "The author likes hanging out with dads", "Dads like Elvis Costello"],
+		"correct": "Dads like Elvis Costello"
+	},
+	{
+		"question": "What is the tone of this tweet?",
+		"answers": ["Joking", "Serious", "Anxious"],
+		"correct": "Joking"
+	}]
+},
+{
+	"tweet": "If eating fish is so good for your brain, how come sharks always score so poorly on the SAT?",
+	"author": "Conan O'Brien",
+	"date": "Nov 5 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What animal is the author perplexed about?",
+		"answers": ["Sharks","Fish","Students"],
+		"correct": "Sharks"
+	},
+	{
+		"question": "According to the tweet, eating fish is good for what part of health?",
+		"answers": ["A healthy brain","Healthy skin","Healthy eyes"],
+		"correct": "A healthy brain"
+	},
+	{
+		"question": "Who is the author of this tweet?",
+		"answers": ["Louis CK","Conan O'Brien","Jimmy Fallon"],
+		"correct": "Conan O'Brien"
+	},
+	{
+		"question": "Which answer best describes this tweet?",
+		"answers": ["A joke","A critique of standardized testing","A critique of eating meat"],
+		"correct": "A joke"
+	},
+	{
+		"question": "According to the author, why do sharks do so poorly on the SAT?",
+		"answers": ["The author doesn't say","Their diet","Their brains"],
+		"correct": "The author doesn't say"
+	}]
+},
+{
+	"tweet": "Did you know? The @MuseumofNature was once home to the Canadian government! Visit this weekend! #MyOttawa",
+	"author": "Explore Canada",
+	"date": "Oct 19 2015",
+	"tags": ["@MuseumofNature","#MyOttawa"],
+	"questions": [{
+		"question": "Where is the Museum of Nature? Choose the best answer.",
+		"answers": ["Canada","Ottawa","Toronto"],
+		"correct": "Ottawa"
+	},
+	{
+		"question": "According to this tweet, the Museum of Nature was once: ",
+		"answers": ["The Prime Minister's house","Housed Canada's Parliament","A Museum dedicated to the Canadian government"],
+		"correct": "Housed Canada's Parliament"
+	},
+	{
+		"question": "Which answer best describes the purpose of this tweet?",
+		"answers": ["To inform you on facts about the museum","To encourage you to visit the museum","To encourage you to tweet your favorite thing about Ottawa"],
+		"correct": "To encourage you to visit the museum"
+	},
+	{
+		"question": "Which answer best describes the author's motivations?",
+		"answers": ["To encourage people to visit different parts of and attractions in Canada","To educate the public about nature","To educate the public on government"],
+		"correct": "To encourage people to visit different parts of and attractions in Canada"
+	},
+	{
+		"question": "When should you visit the museum?",
+		"answers": ["Today","This weekend","On Canada Day"],
+		"correct": "This weekend"
+	}]
+},
+{
+	"tweet": "7yr old daughter, watching the debates: 'Wow, I could definitely run for president.' Thanks for making 7yr olds feel competent, Republicans.",
+	"author": "Kelly Oxford",
+	"date": "Sep 16 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Given this tweet, describe the author's politics.",
+		"answers": ["Conservative","Liberal","Neutral"],
+		"correct": "Liberal"
+	},
+	{
+		"question": "Describe the relationship between the author and the 7yr old.",
+		"answers": ["Aunt/Niece","Father/Daughter","Mother/Daughter"],
+		"correct": "Mother/Daughter"
+	},
+	{
+		"question": "Which answer best describes the tone of this tweet?",
+		"answers": ["Thankful","Angry","Mocking"],
+		"correct": "Mocking"
+	},
+	{
+		"question": "Which answer best describes the author's opinion?",
+		"answers": ["Her child is smart enough to be President","The Republican presidential candidates are not very strong","Presidential candidates are not very strong"],
+		"correct": "The Republican presidential candidates are not very strong"
+	},
+	{
+		"question": "What were the author and child probably doing when the tweet was written?",
+		"answers": ["Watching TV","Listening to the radio","Reading the newspaper"],
+		"correct": "Watching TV"
+	}]
+},
+{
+	"tweet": "We need to do more, and we need to do it with urgency. Now is not the time to relent on climate action. Vote today.",
+	"author": "Green Party Canada",
+	"date": "Oct 19 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Who is the author of this tweet?",
+		"answers": ["A political party","A concerned citizen","The Prime Minister"],
+		"correct": "A political party"
+	},
+	{
+		"question": "What best describes the purpose of the tweet?",
+		"answers": ["To inform the public","To criticize the government","To garner votes for the author"],
+		"correct": "To garner votes for the author"
+	},
+	{
+		"question": "According to the tweet, what do we need to do?",
+		"answers": ["Do more to combat climate change","Combat climate change immediately","Both"],
+		"correct": "Both"
+	},
+	{
+		"question": "In reference to the tweet, pick the most appropriate answer.",
+		"answers": ["Now is not the time to relent on climate action","Now is not the time to vote","Now is not the time do more for the environment"],
+		"correct": "Now is not the time to relent on climate action"
+	},
+	{
+		"question": "What is the most important political issue for the author?",
+		"answers": ["Voter awareness","Political participation","Climate change"],
+		"correct": "Climate change"
+	}]
+},
+{
+	"tweet": "Twitter responses to scientists' misbehaviour shows the power (and limitations) of responding to sexism online: http://nature.com/news",
+	"author": "Matthew R. Francis",
+	"date": "Nov 12 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What is the primary purpose of this tweet?",
+		"answers": ["To espouse an opinion on sexism","To respond to sexist accusations","To direct the reader to an article about sexism"],
+		"correct": "To direct the reader to an article about sexism"
+	},
+	{
+		"question": "Given the tweet, pick the most appropriate answer.",
+		"answers": ["Responding to sexism online is very effective","Responding to sexism online has limitations","Both"],
+		"correct": "Both"
+	},
+	{
+		"question": "Given the information available in the tweet, what do you think is the name of the publication the author references?",
+		"answers": ["'Nature'","'Science'","'Cell'"],
+		"correct": "'Nature'"
+	},
+	{
+		"question": "Given the information available in the tweet, what type of article do you think is being referenced?",
+		"answers": ["News Article","Academic Article","Entertainment Article"],
+		"correct": "News Article"
+	},
+	{
+		"question": "What do you think are the key terms included in this tweet?",
+		"answers": ["Sexism, Science and Social Media","Twitter, Social Media and Science","Twitter, Sexism and Social Media"],
+		"correct": "Sexism, Science and Social Media"
+	}]
+},
+{
+	"tweet": "My dad and I may have made TV history - there will be more Indian people than white people on CBS when we guest on Colbert tonight.",
+	"author": "Aziz Ansari",
+	"date": "Nov 1 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What is the name of the author's father?",
+		"answers": ["Not stated","Mr. Colbert","Mr. Aziz"],
+		"correct": "Not stated"
+	},
+	{
+		"question": "Given the tweet, what does the author identify as?",
+		"answers": ["Caucasian","Indian","Canadian"],
+		"correct": "Indian"
+	},
+	{
+		"question": "On which television network will the author appear?",
+		"answers": ["NBC","ABC","CBS"],
+		"correct": "CBS"
+	},
+	{
+		"question": "How has the author potentially made TV history?",
+		"answers": ["He is the first Indian guest on the Colbert report","There will be more Indian people than white people on television for the first time","There will be more Indian people than white people on CBS for the first time"],
+		"correct": "There will be more Indian people than white people on CBS for the first time"
+	},
+	{
+		"question": "How is the author feeling?",
+		"answers": ["Offended","Happy","Shocked"],
+		"correct": "Happy"
+	}]
+},
+{
+	"tweet": "How the new James Bond movie contributes to the public discourse on the surveillance state, see more: http://interce.pt",
+	"author": "The Intercept",
+	"date": "Nov 9 2015",
+	"tags": [],
+	"questions": [{
+		"question": "What best describes the author is this tweet?",
+		"answers": ["A publication","A blogger","A politician"],
+		"correct": "A publication"
+	},
+	{
+		"question": "What best describes the purpose of this tweet?",
+		"answers": ["Review the new James Bond movie","Criticize the public discourse on the surveillance state","Explore the relationship between popular media and public discourse on the surveillance state"],
+		"correct": "Explore the relationship between popular media and public discourse on the surveillance state"
+	},
+	{
+		"question": "Which answer best describes the website the author links to in this tweet?",
+		"answers": ["The author's website","A website the author recommends","Neither"],
+		"correct": "The author's website"
+	},
+	{
+		"question": "What sort of relationship does the tweet suggest between the new James Bond film and the surveillance state?",
+		"answers": ["The new James Bond film ignores the surveillance state","The new James Bond film fosters discussion on the surveillance state","The new James Bond film encourages the surveillance state"],
+		"correct": "The new James Bond film fosters discussion on the surveillance state"
+	},
+	{
+		"question": "Which answer best describes the purpose of this tweet?",
+		"answers": ["To publicize the author's article","To foster discussion","To express an opinion"],
+		"correct": "To publicize the author's article"
+	}]
+},
+{
+	"tweet": "Students protesting supposedly unsafe spaces on college campuses ought to be more concerned with the digital mob, which finds opposing opinions unsafe",
+	"author": "The American Conservative",
+	"date": "Nov 9 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Which answer best describes the author's political views?",
+		"answers": ["Conservative","Liberal","We don't know"],
+		"correct": "Conservative"
+	},
+	{
+		"question": "Where do these 'supposedly unsafe spaces' exist?",
+		"answers": ["College campuses","Online","On Twitter"],
+		"correct": "College campuses"
+	},
+	{
+		"question": "What are the students trying to achieve?",
+		"answers": ["Creating safe spaces at school", "Equal rights for minority students", "Eliminating cyber bullying"],
+		"correct": "Creating safe spaces at school"
+	},
+	{
+		"question": "Which answer best describes the authors opinion?",
+		"answers": ["Free speech and 'safe spaces' are equally important","Free speech is more important than 'safe spaces'","'Safe spaces' are more important than free speech"],
+		"correct": "Free speech is more important than 'safe spaces'"
+	},
+	{
+		"question": "What do you think the author means by 'digital mob'?",
+		"answers": ["A bunch of people arguing on the internet","A bunch of people with the same opinion on the internet","Students on the internet"],
+		"correct": "A bunch of people with the same opinion on the internet"
+	}]
+},
+{
+	"tweet": "A I walk in late for work holding a Starbucks:'Sorry boss, traffic was fine. I just hate working here and have zero respect for you'",
+	"author": "jazmasta",
+	"date": "Oct 15 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Which answer best describes the purpose of this tweet?",
+		"answers": ["It's a joke","It's a text message to the author's boss","It's a description of the author's day"],
+		"correct": "It's a joke"
+	},
+	{
+		"question": "According to the tweet, why was the author late to work?",
+		"answers": ["There was a long line at Starbucks","Traffic was bad","The author hates his job"],
+		"correct": "The author hates his job"
+	},
+	{
+		"question": "What information does this tweet supply about the author?",
+		"answers": ["Their name and occupation","Their name and age","Nothing"],
+		"correct": "Nothing"
+	},
+	{
+		"question": "During what season was this tweet published?",
+		"answers": ["Autumn","Spring","Unknown"],
+		"correct": "Autumn"
+	},
+	{
+		"question": "Given this tweet, describe the relationship between the author and their boss.",
+		"answers": ["Polite","Friendly","Disrespectful"],
+		"correct": "Disrespectful"
+	}]
+},
+{
+	"tweet": "I suspect that low-carb diets work not because they are healthier, but because without carbs I simply lose the will to eat. Time to eat a sandwich.",
+	"author": "Anna Kendrick",
+	"date": "Nov 5 2015",
+	"tags": [],
+	"questions": [{
+		"question": "Pick the most correct statement: ",
+		"answers": ["Carbs make the author lose the will to eat","Low-carb diets work","The author enjoys eating carbs"],
+		"correct": "The author enjoys eating carbs"
+	},
+	{
+		"question": "Which answer best describes the content of this tweet?",
+		"answers": ["It's a joke","It's a complaint about dieting","It's a review of low-carb diets"],
+		"correct": "It's a joke"
+	},
+	{
+		"question": "The author is expressing: ",
+		"answers": ["Certainty that low-carb diets work","Certainty that low-carb diets do not work","Suspicion that low-carb diets work"],
+		"correct": "Suspicion that low-carb diets work"
+	},
+	{
+		"question": "The author is on a low-carb diet.",
+		"answers": ["True","False","Unclear"],
+		"correct": "False"
+	},
+	{
+		"question": "After writing this tweet what did the author do?",
+		"answers": ["Eat a sandwich","Eat pizza","Eat nothing"],
+		"correct": "Eat a sandwich"
+	}]
+},
+{
+    "tweet": "@ZGreinke has become a free agent pitcher, could this be the @BlueJays chance to pick up a solid starter? Or will they get @DAVIDprice14 ???",
+    "author": "MLB",
+    "date": "1 Nov 2015",
+    "tags": ["@ZGreinke, @BlueJays, @DAVIDprice14"],
+    "questions": [{
+        "question": "How many accounts were tagged?",
+        "answers": ["2", "1", "3", "4", "5"],
+        "correct": "3"
+    },
+    {
+        "question": "Who was the tweet author and who was it addressed to?",
+        "answers": ["@BlueJays to @MLB", "@MapleLeafs to @BlueJays", "@MLB to @DAVIDprice14", "@MLB to @BlueJays"],
+        "correct": "@MLB to @BlueJays"
+    },
+    {
+        "question": "What position did the first person who was mentioned, play?",
+        "answers": ["Pitcher", "Shortstop", "Backcatcher", "Starter"],
+        "correct": "Pitcher"
+    },
+    {
+        "question": "Why are the @BlueJays trying to get @ZGreinke?",
+        "answers": ["He already played for the team and he did well", "He is really cheap and can save the city money", "His contract expired and so he became a free-agent"],
+        "correct": "His contract expired and so he became a free-agent"
+    },
+    {
+        "question": "What are the @BlueJays trying to do?",
+        "answers": ["Pick up new players to fill the team", "Find a good starting pitcher", "To negotiate prices for other pitchers"],
+        "correct": "Find a good starting pitcher"
+    }]
+},
+{
+    "tweet": "501 Queen diverting eastbound via King, Shaw due to a mechanical problem on a streetcar at Queen and Shaw. #TTC",
+    "author": "@TTCnotices",
+    "date": "10 Nov 2015",
+    "tags": [],
+    "questions": [{
+        "question": "Which vehicle is having trouble?",
+        "answers": ["TTC Bus", "TTC Streetcar", "TTC Subway", "Wheelchair Accessibility Buses", "Taxis"],
+        "correct": "TTC Streetcar"
+    },
+    {
+        "question": "What is happening to the vehicle?",
+        "answers": ["Engine failure", "Flat tire", "Mechanical problems"],
+        "correct": "Mechanical problems"
+    },
+    {
+        "question": "What number was the vehicle?",
+        "answers": ["510", "501", "504"],
+        "correct": "501"
+    },
+    {
+        "question": "What street is the vehicle normally on?",
+        "answers": ["Spadina", "King", "Queen", "Shaw"],
+        "correct": "Queen"
+    },
+    {
+        "question": "Who is the targeted audience of this tweet?",
+        "answers": ["Workers and commuters of the city", "The mayor of the city", "Construction workers"],
+        "correct": "Workers and commuters of the city"
+    }]
+},
+{
+	"tweet": "My wife spent two weeks deciding what color to paint the bathroom. I got a cat on my 9th birthday and named it Cat.",
+	"author": "ericsshadow",
+	"date": "6 Nov 2015",
+	"questions": [{
+		"question": "Is the tweeter in a relationship?",
+		"answers": ["Yes", "No"],
+		"correct": "Yes"
+	},
+	{
+		"question": "What was the wife deciding on?",
+		"answers": ["The name of the cat", "Where to go on vacation two weeks", "The color of the bathroom"],
+		"correct": "The color of the bathroom"
+	},
+	{
+		"question": "What was the cat named?",
+		"answers": ["Cat", "Cam", "Kitty"],
+		"correct": "Cat"
+	},
+	{
+		"question": "When did the tweeter receive his cat?",
+		"answers": ["At the age of 12", "At the age of 9", "At the age of 11"],
+		"correct": "At the age of 9"
+	},
+	{
+		"question": "What is the purpose of the tweet?",
+		"answers": ["To show that he has a cat named Cat", "To show how simple minded he is compared to his wife", "To complain about his wife"],
+		"correct": "To show how simple minded he is compared to his wife"
+	}]
+},
+{
+	"tweet": "Really having a hard year in UofT, little time for any fun.  How can one keep up with so much work? Starting to miss high school. #GrowingUp",
+	"author": "jeremy6543",
+	"date": "18 Sept 2015",
+	"questions": [{
+		"question": "What was the occupation of the tweeter?receive",
+		"answers": ["Teacher", "Student", "Teaching Assistant"],
+		"correct": "Student"
+	},
+	{
+		"question": "What university does the student go to?",
+		"answers": ["University of Toronto", "University of Waterloo", "University of Guelph"],
+		"correct": "University of Toronto"
+	},
+	{
+		"question": "What does the student miss?",
+		"answers": ["Having fun", "High school", "Being younger"],
+		"correct": "High school"
+	},
+	{
+		"question": "What was the student complaining about?",
+		"answers": ["University is no fun", "High school didn't prepare the student enough", "Not enough time for all of the work"],
+		"correct": "Not enough time for all of the work"
+	},
+	{
+		"question": "What would help the student's problem the most?",
+		"answers": ["Longer classes to help teach concepts", "More time to have fun", "More time to work on assignments"],
+		"correct": "More time to work on assignments"
+	}]
+},
+{
+	"tweet": "@TradingZoneToronto I have 5 wooden spoons, willing to trade for 1 ttc token, or 3 metal spoons-- or really anything",
+	"author": "Jane Doe",
+	"date": "May 23 2014",
+	"questions": [{
+		"question": "What is the author trying to do? Pick the best answer.",
+		"answers": ["Get someone's attention", "Buy metal spoons", "Trade their spoons for different spoons"],
+		"correct": "Trade their spoons for different spoons"
+	},
+	{
+		"question": "The author is very picky about what they will accept in return for their spoons.",
+		"answers": ["True", "False", "We don't know"],
+		"correct": "False"
+	},
+	{
+		"question": "What type of spoons does the author posses?",
+		"answers": ["Wooden spoons", "Metal spoons", "No spoons at all"],
+		"correct": "Wooden spoons"
+	},
+	{
+		"question": "How many spoons does the author want?",
+		"answers": ["3", "5", "1"],
+		"correct": "3"
+	},
+	{
+		"question": "Where is the author located?",
+		"answers": ["We don't know", "Toronto", "Ottawa"],
+		"correct": "Toronto"
+	}]
+},
+{
+	"tweet": "Do I need to take Linear Algebra for CompSci? I'm in Applied, but I want to take Linear Algebra II too. I don't like Linear Algebra. #McMasterUni",
+	"author": "Student_1",
+	"date": "Sept 10 2015",
+	"questions": [{
+		"question": "Does this author like Linear Algebra?",
+		"answers": ["Yes", "No", "We don't know"],
+		"correct": "No"
+	},
+	{
+		"question": "Which program of study is the student most likely enrolled in?",
+		"answers": ["Engineering", "Math", "Computer Science"],
+		"correct": "Computer Science"
+	},
+	{
+		"question": "Which Linear Algebra course is the student currently enrolled in?",
+		"answers": ["Applied Linear Algebra", "Linear Algebra", "Linear Algebra II"],
+		"correct": "Applied Linear Algebra"
+	},
+	{
+		"question": "Which school does this student attend?",
+		"answers": ["UofT", "McMaster", "York"],
+		"correct": "McMaster"
+	},
+	{
+		"question": "When was this tweet published?",
+		"answers": ["Near the beginning of the school year", "At the end of Winter break", "Just before the Summer semester"],
+		"correct": "Near the beginning of the school year"
+	}]
+},
+{
+	"tweet": "Hello? Is anyone else in Robarts right now? I have a study room. It's 3am and I'm lonely :(",
+	"author": "Tommy Thomsom",
+	"date": "Jan 25 2014",
+	"questions": [{
+		"question": "How is the student feeling?",
+		"answers": ["Calm", "Sad", "Ready to party"],
+		"correct": "Sad"
+	},
+	{
+		"question": "What is the purpose of this tweet?",
+		"answers": ["To find study buddies", "To save the author's study room spot", "To brag"],
+		"correct": "To find study buddies"
+	},
+	{
+		"question": "Which library is the student in?",
+		"answers": ["Robarts", "Gerstein", "He's at home"],
+		"correct": "Robarts"
+	},
+	{
+		"question": "When was this tweet published? Pick the best answer.",
+		"answers": ["Jan 25 2014 in the afternoon", "Jan 18 2014 at 3am", "Jan 25 2014 at 3am"],
+		"correct": "Jan 25 2014 at 3am"
+	},
+	{
+		"question": "What is the author's name?",
+		"answers": ["Tommy Thomsom", "Tommy Johnson", "Jimmy Thomsom"],
+		"correct": "Tommy Thomsom"
+	}]
+},
+{
+	"tweet": "@craigslistToronto Selling 2004 Honda Civic, $3000, needs new muffler. Pickup in Markham, but can deliver in Toronto. Add new stereo for $100",
+	"author": "Hillary Pootnam",
+	"date": "Jun 10 2013",
+	"questions": [{
+		"question": "What is the purpose of this tweet?",
+		"answers": ["To buy a car", "To sell a car", "To hitch a ride to Markham"],
+		"correct": "To sell a car"
+	},
+	{
+		"question": "What model of car is mentioned in the tweet?",
+		"answers": ["2004 Honda Civic", "2014 Honda Civic", "2004 Toyota Corolla"],
+		"correct": "2004 Honda Civic"
+	},
+	{
+		"question": "How much does the car cost?",
+		"answers": ["$3100", "$3000", "$100"],
+		"correct": "$3000"
+	},
+	{
+		"question": "The author of this tweet cannot deliver.",
+		"answers": ["True", "False", "Not stated"],
+		"correct": "False"
+	},
+	{
+		"question": "Where does the author most likely live?",
+		"answers": ["Toronto", "Milton", "Markham"],
+		"correct": "Markham"
+	}]
+},
+{
+	"tweet": "Happy Holidays! Come try our new #Chestnut Praline Latte Frappacino, half price til Friday. Tastes like Cheerios!",
+	"author": "Starbucks Canada",
+	"date": "Dec 2 2014",
+	"questions": [{
+		"question": "Which holidays is the tweet likely referring to?",
+		"answers": ["Christmas/Hanukkah", "Thanksgiving", "Easter"],
+		"correct": "Christmas/Hanukkah"
+	},
+	{
+		"question": "How old is this tweet?",
+		"answers": ["Over a year old", "Less than a year old", "Less than a month old"],
+		"correct": "Less than a year old"
+	},
+	{
+		"question": "What does the new beverage taste like?",
+		"answers": ["Chestnuts", "Pralines", "Cheerios"],
+		"correct": "Cheerios"
+	},
+	{
+		"question": "Where can you buy this beverage?",
+		"answers": ["Tim Hortons", "Second Cup", "Starbucks"],
+		"correct": "Starbucks"
+	},
+	{
+		"question": "How long will the beverage be on sale for?",
+		"answers": ["Until Friday", "Only today", "For the whole week"],
+		"correct": "Until Friday"
+	}]
+},
+{
+    "tweet": "'Only those who dare to fail greatly ever achieve greatly.' – Robert F. Kennedy",
+    "author": "Thomas Edison",
+    "date": "28 Apr 2011",
+    "tags": [],
+    "questions": [{
+        "question": "When was the date of the message?",
+        "answers": ["18 May, 2010", "22 Feb, 1968", "14 Nov 2012", "28 Apr 2011"],
+        "correct": "28 Apr 2011"
+    },
+    {
+        "question": "Who was the author of the message?",
+        "answers": ["Thomas Edison", "Albert Einstein", "John F. Kennedy"],
+        "correct": "Thomas Edison"
+    },
+    {
+        "question": "Who initially said this quote?",
+        "answers": ["John", "Rob", "Joseph", "Ted"],
+        "correct": "Rob"
+    },
+    {
+        "question": "What is the point of this message?",
+        "answers": ["Those who are wealthy, gets what they want", "Those who try new things will overcome those who don't", "Those who are strong will get stronger"],
+        "correct": "Those who try new things will overcome those who don't"
+    },
+    {
+        "question": "Who is the subject of the message?",
+        "answers": ["Failures", "Over achievers", "The wealthy", "The powerful"],
+        "correct": "Failures"
+    }]
+},
+{
+    "tweet": "Today, I only want to eat ice cream, cookies, tacos, chocolate shakes, fries, guava juice, and birthday cakes. Tomorrow, I will run all day.",
+    "author": "Timmy Turner",
+    "date": "11 Jan 2014",
+    "tags": [],
+    "questions": [{
+        "question": "What is the author going to do on 11 Jan 2014?",
+        "answers": ["The author is going to run", "Eat food", "Author did not specify for that date"],
+        "correct": "Eat food"
+    },
+    {
+        "question": "Which food below was not mentioned?",
+        "answers": ["Guava juice", "Ice cream", "Fries", "Chocolate sundae"],
+        "correct": "Chocolate sundae"
+    },
+    {
+        "question": "What was the third food that was mentioned?",
+        "answers": ["Tacos", "Birthday cakes", "Chocolate shakes", "Fries"],
+        "correct": "Tacos"
+    },
+    {
+        "question": "What was the second food that was mentioned?",
+        "answers": ["Guava juice", "Ice cream", "Cookies", "Chocolate shakes"],
+        "correct": "Cookies"
+    },
+    {
+        "question": "Who was the author?",
+        "answers": ["Jeremy", "Joseph", "Maja", "Timmy", "Marc"],
+        "correct": "Timmy"
+    }]
+},
+{
+    "tweet": "Since March '15 the #Arduino IDE downloaded +4 mil. times and now you can contribute donating with Paypal! http://bit.ly/1kUM3lk ",
+    "author": "Arduino",
+    "date": "14 Nov 2015",
+    "tags": [],
+    "questions": [{
+        "question": "What has been downloaded +4 million times?",
+        "answers": ["Paypal API", "IDES of March", "Arduino IDE"],
+        "correct": "Arduino IDE"
+    },
+    {
+        "question": "What year was this tweet written?",
+        "answers": ["2010", "2012", "2015"],
+        "correct": "2015"
+    },
+    {
+        "question": "What is the author encouraging?",
+        "answers": ["Paypal donations", "Paypal purchases", "Downloading of the Arduino IDE", "Buying an Arduino"],
+        "correct": "Paypal donations"
+    },
+    {
+        "question": "What is the recent monthly average download rate?",
+        "answers": ["5,000 downloads a month", "10,000 downloads a month", "500,000 downloads a month"],
+        "correct": "500,000 downloads a month"
+    },
+    {
+        "question": "Who is the author of this tweet?",
+        "answers": ["Massimo Branzi", "Paypal", "Arduino"],
+        "correct": "Arduino"
+    }]
+}
+]
