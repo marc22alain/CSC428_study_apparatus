@@ -3,8 +3,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-// TODO: update the model to hold the questions in an array
-
 var TweetSchema = new Schema({
     tweet: {
         type: String,

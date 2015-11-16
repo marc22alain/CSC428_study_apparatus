@@ -4,7 +4,6 @@ var	mongoose = require('mongoose');
 var	schema = require('./schema');
 
 var localDB = 'mongodb://localhost/CSC428';
-// TODO: provide a hosted database link, then populate it and use it
 var hostedDB = 'mongodb://heroku_pfgs482g:oru1ndak8cke7sl335s2ginheu@ds061148.mongolab.com:61148/heroku_pfgs482g';
 
 mongoose.connect(hostedDB, function(err) {
@@ -55,12 +54,8 @@ var server = http.createServer(function(req, response) {
 	//		'/text'		a request from the client-reader for the next reqding
 	//		'/question'	a request from the client-tester for the next question/quiz
 	//		'/answer'		will save a participant's answers to a quiz about a reading
-	// TODO: create 'practice' state; how to move into it; how to deal with normal interactions; try to avoid any changes on client side
 	//		 'practice' is more like a TOGGLE than a state; or a sub-state; we want to go through all of the motions on the client side, which requires
 	//		 the regular progression through the states;
-	//		 'practice' may be initiated before or after a participant is created ? ... indeterminate ?
-	//		 Consider that you may want to force the 'practice' round !, in which case 'practice' must effectively set up a parallel execution path
-	//		 through the states; 'practice' then becomes a QA attribute of each Particpant { practice: TRUE };
 
 	var handleResults = function(err, results) {
 		if (err) {
@@ -215,9 +210,6 @@ var server = http.createServer(function(req, response) {
 		            var suiteKeys = ['set1', 'set2', 'set3', 'set4', 'set5', 'set6'];
 					var slot = Math.floor(currentTweetNum / suiteKeys.length);
 
-					// console.log('slot = ' + slot + ' currentTweetNum = ' + currentTweetNum + ' for ' + currentExperiment.suite[suiteKeys[slot]][currentTweetNum % 6]);
-
-							// TODO: extract for sharing
 					var transition = function() {
 						state = 'served text';
 						console.log('SWITCHED to ' + state);
@@ -228,7 +220,6 @@ var server = http.createServer(function(req, response) {
 						}, 6000);
 					};
 
-					// TODO: alternate path for 'practice'
 					if (practice) {
 								console.log('HERE practiceExperiment.suite is ' + practiceExperiment.suite);
 
@@ -329,15 +320,14 @@ var server = http.createServer(function(req, response) {
 					response.end();
 				}
 				else if (req.url === '/answer') {
-					// TODO: alternate path for 'practice'
-					// NOT saving the answers
-					// Client gets different message for end-of-practice
 
 					req.on('data', function(data) {
 						var obj = JSON.parse(data);
 						console.log(obj);
 
 						if (practice) {
+							// NOT saving the answers
+							// Client gets different message for end-of-practice
 							console.log('practice results are not recorded');
 							response.writeHead(200);
 							if (practiceTweetNum < maxPracticeTweets) {	// Avoiding off-by-1 errors
@@ -346,7 +336,7 @@ var server = http.createServer(function(req, response) {
 							else {
 								response.write('Last practice question done');
 								practiceTweetNum = 0;
-								// TODO: record the Participant's completion of the practice round
+
 								currentParticipant.practiced += 1;
 								schema.updateParticipant(currentParticipant, function(err, result) {
 									if (err) {
@@ -376,7 +366,7 @@ var server = http.createServer(function(req, response) {
 										// Putting these tasks here, as the asynchronous call will finish later
 										currentTweetNum = 0;
 										currentParticipant = null;
-										// TODO: move experiment to 'completed'
+										// TODO: move experiment to 'completed'; not strictly required
 										currentExperiment = null;
 									}
 									response.end();

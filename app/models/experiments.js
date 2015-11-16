@@ -98,7 +98,6 @@ exports.getPracticeExperiment = function(callback) {
 };
 
 exports.makePracticeExperiment = function(callback) {
-    // TODO: finish this method
     Tweet.tweetListPractice(function(result) {
         console.log(result);
         var tweetList = result;
