@@ -16,6 +16,7 @@ var resetState = function() {
 				$('#participant-form').css('display', 'block');
 				$('#participant-title').css('display', 'none');
 				$('#thank-you').css('display', 'none');
+				$('#participant').css('color', '#000');
 				break;
 			case 'wait-to-start':
 				// Server state: participant has already been created.
@@ -55,6 +56,7 @@ var resetState = function() {
 				// getQuestions();
 				// Get page into proper state
 				$('#start-button-set').css('display', 'none');
+				$('#participant').css('color', '#999');
 				break;
 
 
@@ -187,27 +189,51 @@ var displayQuestion = function() {
 		checked.removeAttr('checked');
 	}
 
+
+	// Pop a RANDOM question from questionSet; will eventually empty it
 	var index = randomIndex(questionSet);
-	// Pop a question from questionSet; will eventually empty it
 	currentQuestion = questionSet.splice(index, 1)[0];
+	$('#question').html(currentQuestion.question);
+
+	
+	var answerDiv = $('#answer-display');
+
+	// This will clear the answers from the last question presented
+	var contents = answerDiv.find('div');
+	contents.remove();
 
 	var answers = currentQuestion.answers;
 
-	$('#question').html(currentQuestion.question);
+	// Present the multiple choice answers in RANDOM order
+	for (var i = 0, MAX = answers.length; i < MAX; i++) {
+		index = randomIndex(answers);
+		var text = answers.splice(index,1)[0];
+		var label = $('<label/>');
 
-	index = randomIndex(answers);
-	var text = answers.splice(index,1)[0]
-	$('#answer-a').html(text);
-	// $('#answer-a').val(text);
+		// Create the radio button for this answer
+		$('<input/>', {
+			'type':'radio',
+			'name':'answer',
+			'value':'answer-' + i,
+			'id':'answer-' + i + '-radio'
+		}).appendTo(label);
 
-	index = randomIndex(answers);
-	text = answers.splice(index,1)[0];
-	$('#answer-b').html(text);
-	// $('#answer-b').val(text);
+		// Create the <span> element holding the answer text
+		$('<span/>', {
+			'id':'answer-' + i,
+			'class':'answer',
+			'html':text
+		}).appendTo(label);
 
-	text = answers.pop();
-	$('#answer-c').html(text);
-	// $('#answer-c').val(text);
+		var wrappingDiv = $('<div/>', {
+			'class':'radio answer-container',
+			'onclick':'checkMe(this)'
+		});
+
+		// 'Cause chaining does not appear to work here
+		label.appendTo(wrappingDiv);
+		wrappingDiv.appendTo(answerDiv);
+	}
 
 	$('#question-num').html('Question ' + (5 - questionSet.length) + ':')
 
@@ -274,7 +300,6 @@ var sendAnswer = function() {
 			}
 		},
 		error: function(data) {
-			// TODO: correct the logic of these responses
 			alert(data.responseText);
 			if (data.responseText === 'Request is out of order') {
 				resetState();

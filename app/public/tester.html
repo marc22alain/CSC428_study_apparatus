@@ -73,25 +73,12 @@
 			<div id="question-display">
 				<div class="question-container">
 					<h5 id="question-num"></h5>
-					<h4 id="question" class="question"></h4>
+					<h2 id="question" class="question"></h2>
 				</div>
-				<div class="radio answer-container" onclick="checkMe(this)">
-					<label>
-						<input type="radio" name="answer" value="answer-a" id="answer-a-radio">&nbsp<span id="answer-a" class="answer"></span>&nbsp
-					</label>
-				</div>
-				<div class="radio answer-container" onclick="checkMe(this)">
-					<label>
-						<input type="radio" name="answer" value="answer-b" id="answer-b-radio">&nbsp<span id="answer-b" class="answer"></span>&nbsp
-					</label>
-				</div>
-				<div class="radio answer-container" onclick="checkMe(this)">
-					<label>
-						<input type="radio" name="answer" value="answer-c" id="answer-c-radio">&nbsp<span id="answer-c" class="answer"></span>&nbsp
-					</label>
-				</div>
-				<button class="btn btn-default" onclick="recordAnswer()">Submit</button>
 
+				<div id="answer-display"></div>
+
+				<button class="btn btn-default" onclick="recordAnswer()">Submit</button>
 			</div>
 
 			<div>

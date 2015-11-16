@@ -113,12 +113,13 @@
 }
 
 .question {
-	font-size: 1.5em;
+	/*font-size: 1.8em;*/
 	color: green;
 }
 
 .answer {
 	font-size: 1.25em;
+	padding-left: 10px;
 	/*color: red;*/
 	/*width: 400px;*/
 }
