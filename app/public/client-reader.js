@@ -56,7 +56,9 @@ var getText = function() {
 			// var spritzing = false;
 			// var RSVP = false;
 
-			var tweetWords = [currentTweet.tweet.author, currentTweet.tweet.date];
+			var tweetWords = [];
+			tweetWords = tweetWords.concat(currentTweet.tweet.author.split(' '));
+			tweetWords = tweetWords.concat(currentTweet.tweet.date.split(' '));
 			tweetWords = tweetWords.concat(currentTweet.tweet.tweet.split(' '));
 
 			// Calculating the magic constant: seconds (per minute) per word (per minute), in milliseconds
