@@ -5,15 +5,28 @@ var spritzController = null;
 $(document).ready(function() {
 	resetState();
 	// alert(screen.width + ' x ' + screen.height);
+	
 	// MacBookAir 11" is 1366 x 768
 	if (screen.width === 1366) {
 		var readerWindow = $('#reader-window')
 		readerWindow.css('transform', 'scale(0.93)');
 	}
 	// iPhone 4S is 320 x 480 ... 160px/inch
-	if (screen.width === 320) {
+	else if (screen.width === 320) {
 		var readerWindow = $('#reader-window')
 		readerWindow.css('transform', 'scale(1.107)');
+	}
+
+	// NEXUS 4 is 384 x 640 @ 318ppi ? :: http://www.gsmarena.com/lg_nexus_4_e960-5048.php
+	else if (screen.width === 384) {
+		var readerWindow = $('#reader-window')
+		readerWindow.css('transform', 'scale(1.1)');
+	}
+
+	// Galaxy Note 4 is 360 x xxxx pixels (~515 ppi pixel density ?)
+	else if (screen.width === 360) {
+		var readerWindow = $('#reader-window')
+		readerWindow.css('transform', 'scale(0.9)');
 	}
 
 	// Construct a SpritzController passing the customization options
