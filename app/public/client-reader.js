@@ -29,6 +29,11 @@ $(document).ready(function() {
 		readerWindow.css('transform', 'scale(0.9)');
 	}
 
+	else if (screen.width === 375) {
+		var readerWindow = $('#reader-window')
+		readerWindow.css('transform', 'scale(1.107)');
+	}
+
 	// Construct a SpritzController passing the customization options
 	spritzController = new SPRITZ.spritzinc.SpritzerController(customOptions);
 
