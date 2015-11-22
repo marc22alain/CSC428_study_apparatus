@@ -248,10 +248,10 @@ var server = http.createServer(function(req, response) {
 							// Determine the method: A: traditional, B: RSVP, C: speed-reading
 							// 24 experiments as of 15-11-11, and avoiding off-by-1 error; numbering starts at 0
 							if (currentExperiment.number < 12) {
-								methodAndTweet.method = methodChoices[(Math.floor(currentTweetNum / 6)) % 3];							
+								methodAndTweet.method = methodChoices[(Math.floor(currentTweetNum / 6) + (currentExperiment.number % 3)) % 3];							
 							}
 							else {
-								methodAndTweet.method = methodChoicesReversed[(Math.floor(currentTweetNum / 6)) % 3];
+								methodAndTweet.method = methodChoicesReversed[(Math.floor(currentTweetNum / 6) + (currentExperiment.number % 3)) % 3];
 							}
 							methodAndTweet.tweet = currentTweet;
 
@@ -368,6 +368,9 @@ var server = http.createServer(function(req, response) {
 										currentParticipant = null;
 										// TODO: move experiment to 'completed'; not strictly required
 										currentExperiment = null;
+										// Reset the practice round for the next participant
+										practice = true;
+										practiceTweetNum = 0;
 									}
 									response.end();
 								}
@@ -379,7 +382,7 @@ var server = http.createServer(function(req, response) {
 					methodAndTweet.method = null;
 					methodAndTweet.tweet = null;
 
-					console.log('*#*#*#*#*#*#*#  AT TEST: ' + practiceTweetNum  + ' vs ' + maxPracticeTweets);
+					// console.log('*#*#*#*#*#*#*#  AT TEST: ' + practiceTweetNum  + ' vs ' + maxPracticeTweets);
 					if (practiceTweetNum  === maxPracticeTweets) {
 						// Participant has just completed practice by submitting the sixth answer,
 						// so present them with the opportunity to start the experiment or practice some more.
